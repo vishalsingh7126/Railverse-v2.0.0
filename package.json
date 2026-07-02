@@ -10,10 +10,14 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
     "test": "vitest run",
     "test:watch": "vitest",
-    "prepare": "husky"
+    "prepare": "husky",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
+    "@radix-ui/react-label": "^2.1.1",
+    "@radix-ui/react-slot": "^1.1.1",
     "@tanstack/react-query": "^5.62.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -30,31 +34,46 @@
     "zustand": "^5.0.2"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^5.2.1",
     "@next/bundle-analyzer": "^15.1.0",
+    "@storybook/addon-a11y": "^10.4.6",
+    "@storybook/addon-docs": "^10.4.6",
+    "@storybook/addon-mcp": "^0.6.0",
+    "@storybook/addon-vitest": "^10.4.6",
+    "@storybook/nextjs-vite": "^10.4.6",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/jest-axe": "^3.5.9",
     "@types/node": "^20.17.9",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
     "@vitejs/plugin-react": "^4.3.4",
+    "@vitest/browser": "^2.1.8",
+    "@vitest/coverage-v8": "^2.1.8",
     "eslint": "^8.57.0",
     "eslint-config-next": "^15.1.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-storybook": "^10.4.6",
     "husky": "^9.1.7",
+    "jest-axe": "^9.0.0",
     "jsdom": "^25.0.1",
     "lint-staged": "^15.2.11",
+    "playwright": "^1.61.1",
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
     "react-scan": "^0.0.9",
+    "storybook": "^10.4.6",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.2",
+    "vite": "^8.1.3",
     "vitest": "^2.1.8"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
       "prettier --write",
       "eslint --fix",
-      "vitest run --findRelatedTests"
+      "vitest related --run --passWithNoTests"
     ],
     "src/**/*.css": [
       "prettier --write"

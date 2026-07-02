@@ -1,0 +1,139 @@
+# Railverse Design System — UI Handbook (v2.0.0)
+
+This document is the single source of truth for all UI/UX development inside Railverse v2.0.0. All components are built with strict **TypeScript**, styled using **Tailwind CSS v4** design variables, support native **Dark Mode**, respect user **Reduced Motion** preferences, and pass automated **Accessibility (WCAG AA)** tests.
+
+---
+
+## ✦ 1. Architecture & Token System
+
+### 1.1 Centralized Motion (`src/lib/motion/`)
+Animations utilize custom Framer Motion spring presets to keep interfaces fast, responsive, and hardware-accelerated:
+- **`scalePresets` (`scale.ts`)**: Snappy scale taps (`0.98`) and subtle hover adjustments.
+- **`hoverPresets` (`hover.ts`)**: Standard brightness shifts, light opacity dims, and spring lifts.
+- **`modalVariants` (`modal.ts`)**: Spring scale-ups and slide-ins for overlays/dialogs.
+- **`drawerVariants` (`drawer.ts`)**: Directional slide-ins from screen edges.
+- **`pageVariants` (`page.ts`)**: Smooth page transitions.
+- **`SPRING_PRESETS` & `EASE_PRESETS` (`transitions.ts`)**: Physics curves (Default, Gentle, Snappy, Bouncy).
+
+### 1.2 TypeScript Tokens (`src/config/design-tokens.ts`)
+CSS variables are mapped to TypeScript-accessible tokens (`DESIGN_TOKENS`) for use in JavaScript charts (e.g. gen-charts, SVG lines), canvas objects, or calculations.
+
+---
+
+## ✦ 2. Component Hierarchy
+
+We organize our codebase into a clear layer hierarchy. Elements in higher tiers compose elements from lower tiers, but not vice-versa:
+
+```mermaid
+graph TD
+    Foundations[1. Foundations: typography, colors, animations] --> Primitives[2. Primitives: buttons, badges, dividers]
+    Primitives --> Surfaces[3. Surfaces: cards, glass-cards]
+    Surfaces --> Blocks[4. Railway Blocks: train cards, status indicators]
+    Blocks --> Pages[5. App Pages: landing page, dashboard]
+```
+
+1. **Foundations**: CSS variables, typography components, and motion presets.
+2. **Primitives**: Base atomic interactives (e.g., `Button`, `Input`, `Badge`, `Divider`).
+3. **Surfaces**: Container layout panels (e.g., `Card`, `GlassCard`).
+4. **Railway Blocks**: Domain-specific compound units (e.g., `TrainCard`, `AvailabilityMeter`).
+5. **App Pages**: Layout frameworks wrapping blocks together.
+
+---
+
+## ✦ 3. Component Composition Philosophy
+
+To keep the codebase maintainable, we adhere to three design philosophies:
+
+### 3.1 Compound over Config Props
+Avoid creating components with massive prop lists (e.g., `<Card title=".." footer=".." description=".." />`). Instead, build compound components that assemble modularly:
+```tsx
+// YES
+<Card>
+  <CardHeader>
+    <CardTitle>Heading</CardTitle>
+  </CardHeader>
+  <CardContent>Content Body</CardContent>
+</Card>
+```
+*Rationale*: Gives developers full flexibility to insert icons, badges, or buttons anywhere in the markup without polluting the parent component's API.
+
+### 3.2 Polymorphic Rendering (`asChild`)
+Always support Radix UI's `Slot` utility via the `asChild` prop on primary layout triggers (e.g., `Button`, `Link`, typography primitives).
+```tsx
+// YES
+<Button asChild variant="outline">
+  <Link href="/dashboard">Dashboard</Link>
+</Button>
+```
+*Rationale*: Bypasses duplicate HTML wrappers and class pollution when combining routing components (`next/link`) with design system primitives.
+
+### 3.3 Strict Ref Forwarding
+Every reusable component must be wrapped in `React.forwardRef` and attach the incoming ref to the root elements.
+```tsx
+// YES
+export const CustomInput = React.forwardRef<HTMLInputElement, Props>(
+  ({ className, ...props }, ref) => (
+    <input ref={ref} className={cn("...", className)} {...props} />
+  )
+);
+CustomInput.displayName = "CustomInput";
+```
+*Rationale*: Enables libraries (e.g. Framer Motion, react-hook-form, Radix overlay primitives) to interact with DOM nodes directly for positioning and focus containment.
+
+---
+
+## ✦ 4. Naming & Variant Conventions
+
+- **Component Names**: Always use `PascalCase` (e.g., `IconButton`, `GlassCard`).
+- **Story files**: Suffix with `.stories.tsx` (e.g., `button.stories.tsx`). Place inside the component directory.
+- **Unit tests**: Suffix with `.test.tsx` (e.g., `button.test.tsx`).
+- **CVA Variants**:
+  - `variant`: Mapped to theme colors: `default`, `secondary`, `outline`, `ghost`, `link`, `success` (emerald), `warning` (amber), `destructive`/`danger` (red), `info` (blue).
+  - `size`: Always scale using standard T-shirt sizes: `sm`, `md`, `lg`.
+
+---
+
+## ✦ 5. Accessibility (A11y) Rules
+
+Every element added to the design system must be designed for accessibility:
+1. **Focus Rings**: Interactive elements must include outline rings (`focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2`) that remain visible under keyboard navigation.
+2. **Keyboard Handlers**: Polymorphic triggers must execute actions on Enter and Spacebar keypresses.
+3. **Strict Alt & Labels**: Icon-only buttons (`IconButton`) require an explicit string for the `aria-label` attribute.
+4. **Invalid States**: Forms in error states must assign `aria-invalid="true"` to active inputs and link descriptions using `aria-describedby` matching helpers.
+5. **Programmatic Audit**: All unit tests must include a `jest-axe` accessibility audit:
+   ```typescript
+   it("should have no accessibility violations", async () => {
+     const { container } = render(<Component />);
+     const results = await axe(container);
+     expect(results).toHaveNoViolations();
+   });
+   ```
+
+---
+
+## ✦ 6. Do's and Don'ts
+
+### Do:
+- **Do** respect user system motion preferences. Wrap interactive tags in `motion` with spring presets that honor OS `prefers-reduced-motion` settings.
+- **Do** execute `React.useId()` unconditionally at the top level of component renders.
+- **Do** omit conflicting HTML parameters (e.g., omit `"prefix" | "suffix" | "size"` from inputs) to prevent namespace collisions.
+
+### Don't:
+- **Don't** use ad-hoc inline transition settings. Always import configurations from `src/lib/motion/`.
+- **Don't** add complex business logic or fetch triggers inside foundational primitives. Primitives should remain purely representational.
+- **Don't** duplicate Tailwind color tokens in TS files. Reference `DESIGN_TOKENS` or use native Tailwind v4 class names.
+
+---
+
+## ✦ 7. Future Extension Checklist
+
+When creating a new design system component, follow this exact workflow:
+
+1. **Implement Core Logic**: Create `src/components/ui/my-component.tsx` utilizing CVA, proper TS props, ref forwarding, and displayName definition.
+2. **Configure Stories**: Create `src/components/ui/my-component.stories.tsx` under CSF v3. Verify states (default, hover, focus, disabled, loading, light/dark themes).
+3. **Write Unit & Accessibility Tests**: Create `src/components/ui/my-component.test.tsx` verifying:
+   - Dynamic class variants.
+   - User event handling (click, keypress, typing).
+   - Automated `axe` accessibility validation.
+4. **Run Checks**: Run typechecking (`npx tsc --noEmit`), linting (`npm run lint`), and tests (`npm run test`) locally.
+5. **Document**: Add the component API table and usage guide in this file (`DESIGN_SYSTEM.md`).

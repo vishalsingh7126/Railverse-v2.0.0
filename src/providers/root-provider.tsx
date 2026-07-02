@@ -47,6 +47,7 @@ export function RootProvider({ children }: RootProviderProps) {
         disableTransitionOnChange
       >
         <MotionConfig
+          reducedMotion="user"
           transition={{
             type: "spring",
             stiffness: 380,
