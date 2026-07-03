@@ -588,13 +588,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">2/25 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">25/25 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">1/119 story errors</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">2/48 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">48/48 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">1/153 story errors</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note info" style="margin-bottom: 16px;">
-            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>0.7s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
+            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>1.0s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
             <pre><code>typescript: {
   reactDocgen: 'react-docgen-typescript',
 }</code></pre>
@@ -746,7 +746,9 @@ title?: string</code></pre>
               <pre><code>const WithActionBtn = () =&gt; (
   &lt;Alert variant=&quot;warning&quot; title=&quot;Ticket Reservation Expiring&quot;&gt;
     &lt;div className=&quot;flex flex-col gap-2.5&quot;&gt;
-      &lt;span className=&quot;text-xs&quot;&gt;Your locked seat booking will release in 2 minutes. Complete booking now.&lt;/span&gt;
+      &lt;span className=&quot;text-xs&quot;&gt;
+        Your locked seat booking will release in 2 minutes. Complete booking now.
+      &lt;/span&gt;
       &lt;Button size=&quot;sm&quot; className=&quot;w-fit&quot;&gt;
         Proceed to Payment
       &lt;/Button&gt;
@@ -783,14 +785,119 @@ title?: string</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="AppShell">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> AppShell</h2>
+      <div class="badges">
+        <label for="c-1-layout-appshell-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-1-layout-appshell-info" class="badge info as-toggle">1 info</label>
+        <label for="c-1-layout-appshell-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/layout/app-shell.stories.tsx">layout-appshell · ./src/components/layout/app-shell.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-1-layout-appshell-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-1-layout-appshell-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-1-layout-appshell-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">5 prop types</span>
+            </div>
+            <pre><code>Component: src\components\layout\app-shell.tsx::AppShell</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>children: React.ReactNode
+
+footer?: React.ReactNode
+
+header?: React.ReactNode
+
+rightSidebar?: React.ReactNode
+
+sidebar?: React.ReactNode</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { AppShell, NavigationProvider } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;AppShell
+    header={(&lt;header className=&quot;h-16 border-b border-border bg-card flex items-center px-6 justify-between&quot;&gt;
+      &lt;span className=&quot;font-bold text-lg&quot;&gt;Railverse Header&lt;/span&gt;
+      &lt;div className=&quot;h-8 w-8 rounded-full bg-accent&quot; /&gt;
+    &lt;/header&gt;)}
+    sidebar={(&lt;div className=&quot;p-4 space-y-4&quot;&gt;
+      &lt;div className=&quot;h-8 bg-accent rounded&quot; /&gt;
+      &lt;div className=&quot;h-8 bg-accent rounded&quot; /&gt;
+      &lt;div className=&quot;h-8 bg-accent rounded&quot; /&gt;
+    &lt;/div&gt;)}
+    rightSidebar={(&lt;div className=&quot;p-4 space-y-4&quot;&gt;
+      &lt;h4 className=&quot;font-bold text-sm&quot;&gt;Detail Drawer&lt;/h4&gt;
+      &lt;div className=&quot;h-32 bg-accent rounded&quot; /&gt;
+    &lt;/div&gt;)}
+    footer={&lt;div&gt;© 2026 TravelCore Technologies Pvt. Ltd.&lt;/div&gt;}&gt;(&lt;div className=&quot;border-2 border-dashed border-border rounded-lg p-12 text-center h-[400px] flex items-center justify-center text-muted-foreground font-semibold&quot;&gt;Main Dashboard Content Space
+            &lt;/div&gt;)&lt;/AppShell&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="Badge">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Badge</h2>
       <div class="badges">
         
-        <label for="c-1-foundations-badge-info" class="badge info as-toggle">1 info</label>
-        <label for="c-1-foundations-badge-stories" class="badge ok as-toggle">7 stories</label>
+        <label for="c-2-foundations-badge-info" class="badge info as-toggle">1 info</label>
+        <label for="c-2-foundations-badge-stories" class="badge ok as-toggle">7 stories</label>
         
         
       </div>
@@ -803,8 +910,8 @@ title?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-1-foundations-badge-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-1-foundations-badge-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-2-foundations-badge-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-2-foundations-badge-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -908,14 +1015,110 @@ title?: string</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="Breadcrumb">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Breadcrumb</h2>
+      <div class="badges">
+        <label for="c-3-navigation-breadcrumb-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-3-navigation-breadcrumb-info" class="badge info as-toggle">1 info</label>
+        <label for="c-3-navigation-breadcrumb-stories" class="badge ok as-toggle">2 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/navigation/breadcrumb.stories.tsx">navigation-breadcrumb · ./src/components/navigation/breadcrumb.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-3-navigation-breadcrumb-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-3-navigation-breadcrumb-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-3-navigation-breadcrumb-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">3 prop types</span>
+            </div>
+            <pre><code>Component: src\components\navigation\breadcrumb.tsx::Breadcrumb</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>items: BreadcrumbItem[]
+
+maxVisibleItems?: number = 4
+
+separator?: React.ReactNode = &lt;ChevronRight className=&quot;h-4 w-4 opacity-50&quot; /&gt;</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Breadcrumb } from "railverse-v2";
+import { Home } from "lucide-react";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;Breadcrumb items={mockItems} maxVisibleItems={4} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Collapsed</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Collapsed = () =&gt; &lt;Breadcrumb items={mockItems} maxVisibleItems={3} /&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="Button">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Button</h2>
       <div class="badges">
-        <label for="c-2-foundations-button-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-2-foundations-button-info" class="badge info as-toggle">1 info</label>
-        <label for="c-2-foundations-button-stories" class="badge ok as-toggle">9 stories</label>
+        <label for="c-4-foundations-button-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-4-foundations-button-info" class="badge info as-toggle">1 info</label>
+        <label for="c-4-foundations-button-stories" class="badge ok as-toggle">9 stories</label>
         
         
       </div>
@@ -928,11 +1131,11 @@ title?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-2-foundations-button-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-2-foundations-button-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-4-foundations-button-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-4-foundations-button-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-2-foundations-button-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-4-foundations-button-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1071,9 +1274,9 @@ type?: any = &quot;button&quot;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Card</h2>
       <div class="badges">
-        <label for="c-3-foundations-card-props" class="badge ok as-toggle">1 prop type</label>
-        <label for="c-3-foundations-card-info" class="badge info as-toggle">1 info</label>
-        <label for="c-3-foundations-card-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-5-foundations-card-props" class="badge ok as-toggle">1 prop type</label>
+        <label for="c-5-foundations-card-info" class="badge info as-toggle">1 info</label>
+        <label for="c-5-foundations-card-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -1086,11 +1289,11 @@ type?: any = &quot;button&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-3-foundations-card-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-3-foundations-card-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-5-foundations-card-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-5-foundations-card-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-3-foundations-card-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-5-foundations-card-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1206,9 +1409,9 @@ type?: any = &quot;button&quot;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Checkbox</h2>
       <div class="badges">
-        <label for="c-4-forms-checkbox-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-4-forms-checkbox-info" class="badge info as-toggle">1 info</label>
-        <label for="c-4-forms-checkbox-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-6-forms-checkbox-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-6-forms-checkbox-info" class="badge info as-toggle">1 info</label>
+        <label for="c-6-forms-checkbox-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -1221,11 +1424,11 @@ type?: any = &quot;button&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-4-forms-checkbox-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-4-forms-checkbox-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-6-forms-checkbox-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-6-forms-checkbox-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-4-forms-checkbox-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-6-forms-checkbox-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1344,14 +1547,106 @@ label?: string</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="Cluster">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Cluster</h2>
+      <div class="badges">
+        
+        <label for="c-7-layout-cluster-info" class="badge info as-toggle">1 info</label>
+        <label for="c-7-layout-cluster-stories" class="badge ok as-toggle">2 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/layout/cluster.stories.tsx">layout-cluster · ./src/components/layout/cluster.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-7-layout-cluster-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-7-layout-cluster-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Cluster } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;Cluster gap=&quot;sm&quot; justify=&quot;start&quot;&gt;(&lt;&gt;
+      {Array.from({ length: 5 }).map((_, i) =&gt; (
+        &lt;div key={i} className=&quot;bg-primary text-primary-foreground p-3 rounded text-xs font-semibold&quot;&gt;
+          Station Tag {i + 1}
+        &lt;/div&gt;
+      ))}
+    &lt;/&gt;)&lt;/Cluster&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Between</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Between = () =&gt; &lt;Cluster
+    gap=&quot;md&quot;
+    justify=&quot;between&quot;
+    className=&quot;w-[400px] border border-border p-2 rounded-md&quot;&gt;(&lt;&gt;
+      &lt;span className=&quot;font-semibold text-sm&quot;&gt;PNR Status&lt;/span&gt;
+      &lt;span className=&quot;bg-green-500/10 text-green-500 text-xs px-2 py-0.5 rounded font-bold&quot;&gt;CNF&lt;/span&gt;
+    &lt;/&gt;)&lt;/Cluster&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="Combobox">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Combobox</h2>
       <div class="badges">
-        <label for="c-5-forms-combobox-props" class="badge ok as-toggle">13 prop types</label>
-        <label for="c-5-forms-combobox-info" class="badge info as-toggle">1 info</label>
-        <label for="c-5-forms-combobox-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-8-forms-combobox-props" class="badge ok as-toggle">13 prop types</label>
+        <label for="c-8-forms-combobox-info" class="badge info as-toggle">1 info</label>
+        <label for="c-8-forms-combobox-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -1364,11 +1659,11 @@ label?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-5-forms-combobox-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-5-forms-combobox-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-8-forms-combobox-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-8-forms-combobox-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-5-forms-combobox-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-8-forms-combobox-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1520,14 +1815,222 @@ value?: string</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="CommandPalette">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> CommandPalette</h2>
+      <div class="badges">
+        <label for="c-9-navigation-commandpalette-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-9-navigation-commandpalette-info" class="badge info as-toggle">1 info</label>
+        <label for="c-9-navigation-commandpalette-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/navigation/command-palette.stories.tsx">navigation-commandpalette · ./src/components/navigation/command-palette.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-9-navigation-commandpalette-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-9-navigation-commandpalette-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-9-navigation-commandpalette-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">4 prop types</span>
+            </div>
+            <pre><code>Component: src\components\navigation\command-palette.tsx::CommandPalette</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>children: React.ReactNode
+
+className?: string
+
+isOpen: boolean
+
+onOpenChange: (open: boolean) =&gt; void</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import {
+    CommandPalette,
+    CommandPaletteGroup,
+    CommandPaletteInput,
+    CommandPaletteItem,
+    CommandPaletteList,
+} from "railverse-v2";
+import { Search, Settings, Train } from "lucide-react";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;CommandPalette isOpen onOpenChange={() =&gt; {}}&gt;(&lt;&gt;
+      &lt;CommandPaletteInput placeholder=&quot;Search trains, settings...&quot; /&gt;
+      &lt;CommandPaletteList&gt;
+        &lt;CommandPaletteGroup heading=&quot;Suggestions&quot;&gt;
+          &lt;CommandPaletteItem active&gt;
+            &lt;Train className=&quot;h-4 w-4 mr-2&quot; /&gt;
+            &lt;span&gt;Live Train Status&lt;/span&gt;
+          &lt;/CommandPaletteItem&gt;
+          &lt;CommandPaletteItem&gt;
+            &lt;Search className=&quot;h-4 w-4 mr-2&quot; /&gt;
+            &lt;span&gt;Verify PNR Code&lt;/span&gt;
+          &lt;/CommandPaletteItem&gt;
+        &lt;/CommandPaletteGroup&gt;
+        &lt;CommandPaletteGroup heading=&quot;Account&quot;&gt;
+          &lt;CommandPaletteItem&gt;
+            &lt;Settings className=&quot;h-4 w-4 mr-2&quot; /&gt;
+            &lt;span&gt;User Profile Settings&lt;/span&gt;
+          &lt;/CommandPaletteItem&gt;
+        &lt;/CommandPaletteGroup&gt;
+      &lt;/CommandPaletteList&gt;
+    &lt;/&gt;)&lt;/CommandPalette&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="ContentGrid">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> ContentGrid</h2>
+      <div class="badges">
+        
+        <label for="c-10-layout-contentgrid-info" class="badge info as-toggle">1 info</label>
+        <label for="c-10-layout-contentgrid-stories" class="badge ok as-toggle">2 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/layout/content-grid.stories.tsx">layout-contentgrid · ./src/components/layout/content-grid.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-10-layout-contentgrid-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-10-layout-contentgrid-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { ContentGrid } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;ContentGrid cols={3} gap=&quot;md&quot;&gt;(&lt;&gt;
+      {Array.from({ length: 6 }).map((_, i) =&gt; (
+        &lt;div key={i} className=&quot;bg-accent border border-border rounded-lg p-8 text-center text-accent-foreground font-semibold&quot;&gt;
+          Grid Item {i + 1}
+        &lt;/div&gt;
+      ))}
+    &lt;/&gt;)&lt;/ContentGrid&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Sidebar Layout</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const SidebarLayout = () =&gt; &lt;ContentGrid cols=&quot;sidebar&quot; gap=&quot;lg&quot;&gt;(&lt;&gt;
+      &lt;div className=&quot;bg-accent border border-border rounded-lg p-8 text-center text-accent-foreground font-semibold&quot;&gt;
+        Sidebar Left Pane (280px)
+      &lt;/div&gt;
+      &lt;div className=&quot;bg-accent/40 border border-border rounded-lg p-8 text-center text-accent-foreground font-semibold h-[200px]&quot;&gt;
+        Main Content Pane (Remaining width)
+      &lt;/div&gt;
+    &lt;/&gt;)&lt;/ContentGrid&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="DatePicker">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> DatePicker</h2>
       <div class="badges">
-        <label for="c-6-forms-datepicker-props" class="badge ok as-toggle">8 prop types</label>
-        <label for="c-6-forms-datepicker-info" class="badge info as-toggle">1 info</label>
-        <label for="c-6-forms-datepicker-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-11-forms-datepicker-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-11-forms-datepicker-info" class="badge info as-toggle">1 info</label>
+        <label for="c-11-forms-datepicker-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -1540,11 +2043,11 @@ value?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-6-forms-datepicker-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-6-forms-datepicker-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-11-forms-datepicker-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-11-forms-datepicker-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-6-forms-datepicker-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-11-forms-datepicker-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1680,9 +2183,9 @@ value?: Date | DateRange</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Divider</h2>
       <div class="badges">
-        <label for="c-7-foundations-divider-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-7-foundations-divider-info" class="badge info as-toggle">1 info</label>
-        <label for="c-7-foundations-divider-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-12-foundations-divider-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-12-foundations-divider-info" class="badge info as-toggle">1 info</label>
+        <label for="c-12-foundations-divider-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -1695,11 +2198,11 @@ value?: Date | DateRange</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-7-foundations-divider-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-7-foundations-divider-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-12-foundations-divider-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-12-foundations-divider-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-7-foundations-divider-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-12-foundations-divider-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1807,9 +2310,9 @@ orientation?: &quot;horizontal&quot; | &quot;vertical&quot; = &quot;horizontal&q
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> EmptyState</h2>
       <div class="badges">
-        <label for="c-8-feedback-emptystate-props" class="badge ok as-toggle">5 prop types</label>
-        <label for="c-8-feedback-emptystate-info" class="badge info as-toggle">1 info</label>
-        <label for="c-8-feedback-emptystate-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-13-feedback-emptystate-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-13-feedback-emptystate-info" class="badge info as-toggle">1 info</label>
+        <label for="c-13-feedback-emptystate-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -1822,11 +2325,11 @@ orientation?: &quot;horizontal&quot; | &quot;vertical&quot; = &quot;horizontal&q
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-8-feedback-emptystate-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-8-feedback-emptystate-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-13-feedback-emptystate-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-13-feedback-emptystate-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-8-feedback-emptystate-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-13-feedback-emptystate-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1956,9 +2459,9 @@ import { Search, Train } from "lucide-react";</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ErrorState</h2>
       <div class="badges">
-        <label for="c-9-feedback-errorstate-props" class="badge ok as-toggle">5 prop types</label>
-        <label for="c-9-feedback-errorstate-info" class="badge info as-toggle">1 info</label>
-        <label for="c-9-feedback-errorstate-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-14-feedback-errorstate-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-14-feedback-errorstate-info" class="badge info as-toggle">1 info</label>
+        <label for="c-14-feedback-errorstate-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -1971,11 +2474,11 @@ import { Search, Train } from "lucide-react";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-9-feedback-errorstate-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-9-feedback-errorstate-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-14-feedback-errorstate-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-14-feedback-errorstate-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-9-feedback-errorstate-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-14-feedback-errorstate-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2093,8 +2596,8 @@ title?: string = &quot;Something went wrong&quot;</code></pre>
       <h2><span class="status-dot dot-ok"></span> GlassCard</h2>
       <div class="badges">
         
-        <label for="c-10-foundations-glasscard-info" class="badge info as-toggle">1 info</label>
-        <label for="c-10-foundations-glasscard-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-15-foundations-glasscard-info" class="badge info as-toggle">1 info</label>
+        <label for="c-15-foundations-glasscard-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -2107,8 +2610,8 @@ title?: string = &quot;Something went wrong&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-10-foundations-glasscard-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-10-foundations-glasscard-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-15-foundations-glasscard-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-15-foundations-glasscard-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -2173,14 +2676,136 @@ title?: string = &quot;Something went wrong&quot;</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="Header">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Header</h2>
+      <div class="badges">
+        <label for="c-16-navigation-header-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-16-navigation-header-info" class="badge info as-toggle">1 info</label>
+        <label for="c-16-navigation-header-stories" class="badge ok as-toggle">2 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/navigation/header.stories.tsx">navigation-header · ./src/components/navigation/header.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-16-navigation-header-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-16-navigation-header-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-16-navigation-header-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">7 prop types</span>
+            </div>
+            <pre><code>Component: src\components\navigation\header.tsx::Header</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>actions?: React.ReactNode
+
+glassmorphism?: any = true
+
+logo?: React.ReactNode
+
+navigation?: React.ReactNode
+
+scrollAware?: boolean = true
+
+sticky?: any = true
+
+variant?: any = &quot;solid&quot;</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Header } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;Header
+    variant=&quot;solid&quot;
+    logo={&lt;span className=&quot;font-bold text-lg tracking-tight&quot;&gt;Railverse&lt;/span&gt;}
+    navigation={(&lt;nav className=&quot;flex gap-6 text-sm font-medium text-muted-foreground&quot;&gt;
+      &lt;a href=&quot;#&quot; className=&quot;text-foreground hover:text-foreground&quot;&gt;Search&lt;/a&gt;
+      &lt;a href=&quot;#&quot; className=&quot;hover:text-foreground&quot;&gt;Schedule&lt;/a&gt;
+      &lt;a href=&quot;#&quot; className=&quot;hover:text-foreground&quot;&gt;PNR Status&lt;/a&gt;
+    &lt;/nav&gt;)}
+    actions={(&lt;div className=&quot;flex gap-2&quot;&gt;
+      &lt;button className=&quot;px-3 py-1.5 text-xs border rounded-md&quot;&gt;Log In&lt;/button&gt;
+      &lt;button className=&quot;px-3 py-1.5 text-xs bg-primary text-primary-foreground rounded-md&quot;&gt;Sign Up&lt;/button&gt;
+    &lt;/div&gt;)} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Transparent Scroll Aware</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TransparentScrollAware = () =&gt; &lt;Header
+    variant=&quot;transparent&quot;
+    scrollAware
+    logo={&lt;span className=&quot;font-bold text-lg tracking-tight&quot;&gt;Railverse&lt;/span&gt;}
+    navigation={(&lt;nav className=&quot;flex gap-6 text-sm font-medium text-muted-foreground&quot;&gt;
+      &lt;a href=&quot;#&quot; className=&quot;hover:text-foreground&quot;&gt;Home&lt;/a&gt;
+      &lt;a href=&quot;#&quot; className=&quot;hover:text-foreground&quot;&gt;Features&lt;/a&gt;
+    &lt;/nav&gt;)}
+    actions={&lt;button className=&quot;px-3 py-1.5 text-xs bg-primary text-primary-foreground rounded-md&quot;&gt;Action&lt;/button&gt;} /&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="IconButton">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> IconButton</h2>
       <div class="badges">
-        <label for="c-11-foundations-iconbutton-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-11-foundations-iconbutton-info" class="badge info as-toggle">1 info</label>
-        <label for="c-11-foundations-iconbutton-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-17-foundations-iconbutton-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-17-foundations-iconbutton-info" class="badge info as-toggle">1 info</label>
+        <label for="c-17-foundations-iconbutton-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -2193,11 +2818,11 @@ title?: string = &quot;Something went wrong&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-11-foundations-iconbutton-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-11-foundations-iconbutton-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-17-foundations-iconbutton-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-17-foundations-iconbutton-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-11-foundations-iconbutton-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-17-foundations-iconbutton-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2301,9 +2926,9 @@ import { IconButton } from "railverse-v2";</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Input</h2>
       <div class="badges">
-        <label for="c-12-foundations-input-props" class="badge ok as-toggle">8 prop types</label>
-        <label for="c-12-foundations-input-info" class="badge info as-toggle">1 info</label>
-        <label for="c-12-foundations-input-stories" class="badge ok as-toggle">8 stories</label>
+        <label for="c-18-foundations-input-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-18-foundations-input-info" class="badge info as-toggle">1 info</label>
+        <label for="c-18-foundations-input-stories" class="badge ok as-toggle">8 stories</label>
         
         
       </div>
@@ -2316,11 +2941,11 @@ import { IconButton } from "railverse-v2";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-12-foundations-input-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-12-foundations-input-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-18-foundations-input-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-18-foundations-input-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-12-foundations-input-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-18-foundations-input-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2470,9 +3095,9 @@ import { Mail, Search } from "lucide-react";</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> LoadingOverlay</h2>
       <div class="badges">
-        <label for="c-13-feedback-loadingoverlay-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-13-feedback-loadingoverlay-info" class="badge info as-toggle">1 info</label>
-        <label for="c-13-feedback-loadingoverlay-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-19-feedback-loadingoverlay-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-19-feedback-loadingoverlay-info" class="badge info as-toggle">1 info</label>
+        <label for="c-19-feedback-loadingoverlay-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -2485,11 +3110,11 @@ import { Mail, Search } from "lucide-react";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-13-feedback-loadingoverlay-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-13-feedback-loadingoverlay-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-19-feedback-loadingoverlay-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-19-feedback-loadingoverlay-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-13-feedback-loadingoverlay-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-19-feedback-loadingoverlay-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2577,14 +3202,292 @@ visible: boolean</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="MobileNavigation">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> MobileNavigation</h2>
+      <div class="badges">
+        <label for="c-20-navigation-mobilenavigation-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-20-navigation-mobilenavigation-info" class="badge info as-toggle">1 info</label>
+        <label for="c-20-navigation-mobilenavigation-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/navigation/mobile-navigation.stories.tsx">navigation-mobilenavigation · ./src/components/navigation/mobile-navigation.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-20-navigation-mobilenavigation-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-20-navigation-mobilenavigation-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-20-navigation-mobilenavigation-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">2 prop types</span>
+            </div>
+            <pre><code>Component: src\components\navigation\mobile-navigation.tsx::MobileNavigation</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>drawerContent?: React.ReactNode
+
+items: MobileNavItem[]</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { LayoutDashboard, Train } from "lucide-react";
+import { MobileNavigation } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;MobileNavigation
+    items={mockItems}
+    drawerContent={(&lt;div className=&quot;space-y-4&quot;&gt;
+      &lt;div className=&quot;font-semibold text-sm border-b pb-2 mb-2&quot;&gt;More Options&lt;/div&gt;
+      &lt;a href=&quot;#&quot; className=&quot;block py-2 text-sm text-muted-foreground hover:text-foreground&quot;&gt;Settings&lt;/a&gt;
+      &lt;a href=&quot;#&quot; className=&quot;block py-2 text-sm text-muted-foreground hover:text-foreground&quot;&gt;Help Support&lt;/a&gt;
+    &lt;/div&gt;)} /&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="NavigationBar">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> NavigationBar</h2>
+      <div class="badges">
+        <label for="c-21-navigation-navigationbar-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-21-navigation-navigationbar-info" class="badge info as-toggle">1 info</label>
+        <label for="c-21-navigation-navigationbar-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/navigation/navigation-bar.stories.tsx">navigation-navigationbar · ./src/components/navigation/navigation-bar.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-21-navigation-navigationbar-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-21-navigation-navigationbar-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-21-navigation-navigationbar-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">2 prop types</span>
+            </div>
+            <pre><code>Component: src\components\navigation\navigation-bar.tsx::NavigationBar</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>collapse?: boolean = false
+
+items: NavigationItem[]</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Compass, Search, Train } from "lucide-react";
+import { NavigationBar } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;NavigationBar
+    items={[
+      { label: &quot;Search Trains&quot;, href: &quot;#&quot;, active: true, icon: &lt;Train className=&quot;h-4 w-4&quot; /&gt; },
+      { label: &quot;PNR Status&quot;, href: &quot;#&quot;, icon: &lt;Search className=&quot;h-4 w-4&quot; /&gt; },
+      { label: &quot;Explore Quotas&quot;, href: &quot;#&quot;, icon: &lt;Compass className=&quot;h-4 w-4&quot; /&gt; },
+    ]} /&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="NotificationMenu">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> NotificationMenu</h2>
+      <div class="badges">
+        <label for="c-22-navigation-notificationmenu-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-22-navigation-notificationmenu-info" class="badge info as-toggle">1 info</label>
+        <label for="c-22-navigation-notificationmenu-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/navigation/notification-menu.stories.tsx">navigation-notificationmenu · ./src/components/navigation/notification-menu.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-22-navigation-notificationmenu-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-22-navigation-notificationmenu-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-22-navigation-notificationmenu-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">4 prop types</span>
+            </div>
+            <pre><code>Component: src\components\navigation\notification-menu.tsx::NotificationMenu</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>bellClassName?: string
+
+children: React.ReactNode
+
+className?: string
+
+count?: number = 0</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { NotificationMenu } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;NotificationMenu count={3}&gt;(&lt;div className=&quot;divide-y divide-border text-sm&quot;&gt;
+      &lt;div className=&quot;p-3 hover:bg-accent/30 cursor-pointer&quot;&gt;
+        &lt;p className=&quot;font-medium&quot;&gt;Train Delay Alert&lt;/p&gt;
+        &lt;p className=&quot;text-xs text-muted-foreground&quot;&gt;Train 12001 is running 15 mins late.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;p-3 hover:bg-accent/30 cursor-pointer&quot;&gt;
+        &lt;p className=&quot;font-medium&quot;&gt;Booking Confirmed&lt;/p&gt;
+        &lt;p className=&quot;text-xs text-muted-foreground&quot;&gt;Your ticket for NDLS-BCT is confirmed.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;)&lt;/NotificationMenu&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="OTPInput">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> OTPInput</h2>
       <div class="badges">
-        <label for="c-14-forms-otpinput-props" class="badge ok as-toggle">10 prop types</label>
-        <label for="c-14-forms-otpinput-info" class="badge info as-toggle">1 info</label>
-        <label for="c-14-forms-otpinput-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-23-forms-otpinput-props" class="badge ok as-toggle">10 prop types</label>
+        <label for="c-23-forms-otpinput-info" class="badge info as-toggle">1 info</label>
+        <label for="c-23-forms-otpinput-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -2597,11 +3500,11 @@ visible: boolean</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-14-forms-otpinput-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-14-forms-otpinput-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-23-forms-otpinput-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-23-forms-otpinput-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-14-forms-otpinput-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-23-forms-otpinput-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2727,14 +3630,280 @@ value?: string</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="PageContainer">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> PageContainer</h2>
+      <div class="badges">
+        
+        <label for="c-24-layout-pagecontainer-info" class="badge info as-toggle">1 info</label>
+        <label for="c-24-layout-pagecontainer-stories" class="badge ok as-toggle">2 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/layout/page-container.stories.tsx">layout-pagecontainer · ./src/components/layout/page-container.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-24-layout-pagecontainer-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-24-layout-pagecontainer-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { PageContainer } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;PageContainer size=&quot;lg&quot;&gt;(&lt;div className=&quot;bg-accent border border-border rounded-lg p-8 text-center text-accent-foreground font-semibold&quot;&gt;Responsive Page Content (Max-width: 7xl)
+            &lt;/div&gt;)&lt;/PageContainer&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Small</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Small = () =&gt; &lt;PageContainer size=&quot;sm&quot;&gt;(&lt;div className=&quot;bg-accent border border-border rounded-lg p-8 text-center text-accent-foreground font-semibold&quot;&gt;Small Content Bounds (Max-width: 3xl)
+            &lt;/div&gt;)&lt;/PageContainer&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="Pagination">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Pagination</h2>
+      <div class="badges">
+        <label for="c-25-navigation-pagination-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-25-navigation-pagination-info" class="badge info as-toggle">1 info</label>
+        <label for="c-25-navigation-pagination-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/navigation/pagination.stories.tsx">navigation-pagination · ./src/components/navigation/pagination.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-25-navigation-pagination-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-25-navigation-pagination-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-25-navigation-pagination-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">4 prop types</span>
+            </div>
+            <pre><code>Component: src\components\navigation\pagination.tsx::Pagination</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>currentPage: number
+
+onPageChange: (page: number) =&gt; void
+
+siblingCount?: number = 1
+
+totalPages: number</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Pagination } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;Pagination currentPage={2} totalPages={10} onPageChange={() =&gt; {}} /&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="ProfileMenu">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> ProfileMenu</h2>
+      <div class="badges">
+        <label for="c-26-navigation-profilemenu-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-26-navigation-profilemenu-info" class="badge info as-toggle">1 info</label>
+        <label for="c-26-navigation-profilemenu-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/navigation/profile-menu.stories.tsx">navigation-profilemenu · ./src/components/navigation/profile-menu.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-26-navigation-profilemenu-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-26-navigation-profilemenu-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-26-navigation-profilemenu-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">5 prop types</span>
+            </div>
+            <pre><code>Component: src\components\navigation\profile-menu.tsx::ProfileMenu</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>avatarUrl?: string
+
+children?: React.ReactNode
+
+className?: string
+
+fallbackText?: string = &quot;U&quot;
+
+items?: ProfileMenuItemProps[]</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { LogOut, User } from "lucide-react";
+import { ProfileMenu } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;ProfileMenu
+    fallbackText=&quot;VS&quot;
+    items={[
+      { label: &quot;My Profile&quot;, icon: &lt;User className=&quot;h-4 w-4&quot; /&gt; },
+      { label: &quot;Log Out&quot;, icon: &lt;LogOut className=&quot;h-4 w-4&quot; /&gt;, danger: true },
+    ]} /&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="Progress">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Progress</h2>
       <div class="badges">
-        <label for="c-15-feedback-progress-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-15-feedback-progress-info" class="badge info as-toggle">1 info</label>
-        <label for="c-15-feedback-progress-stories" class="badge ok as-toggle">7 stories</label>
+        <label for="c-27-feedback-progress-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-27-feedback-progress-info" class="badge info as-toggle">1 info</label>
+        <label for="c-27-feedback-progress-stories" class="badge ok as-toggle">7 stories</label>
         
         
       </div>
@@ -2747,11 +3916,11 @@ value?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-15-feedback-progress-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-15-feedback-progress-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-27-feedback-progress-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-27-feedback-progress-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-15-feedback-progress-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-27-feedback-progress-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2893,9 +4062,9 @@ variant?: &quot;linear&quot; | &quot;circular&quot; = &quot;linear&quot;</code><
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> RadioGroup</h2>
       <div class="badges">
-        <label for="c-16-forms-radiogroup-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-16-forms-radiogroup-info" class="badge info as-toggle">1 info</label>
-        <label for="c-16-forms-radiogroup-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-28-forms-radiogroup-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-28-forms-radiogroup-info" class="badge info as-toggle">1 info</label>
+        <label for="c-28-forms-radiogroup-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -2908,11 +4077,11 @@ variant?: &quot;linear&quot; | &quot;circular&quot; = &quot;linear&quot;</code><
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-16-forms-radiogroup-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-16-forms-radiogroup-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-28-forms-radiogroup-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-28-forms-radiogroup-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-16-forms-radiogroup-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-28-forms-radiogroup-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3009,7 +4178,12 @@ orientation?: any = &quot;vertical&quot;</code></pre>
               <pre><code>const DisabledOption = () =&gt; &lt;RadioGroup
     options={[
       { value: &quot;gp&quot;, label: &quot;General Quota&quot; },
-      { value: &quot;tq&quot;, label: &quot;Tatkal Quota&quot;, description: &quot;Not available for this booking class&quot;, disabled: true },
+      {
+        value: &quot;tq&quot;,
+        label: &quot;Tatkal Quota&quot;,
+        description: &quot;Not available for this booking class&quot;,
+        disabled: true,
+      },
       { value: &quot;ld&quot;, label: &quot;Ladies Quota&quot; },
     ]}
     defaultValue=&quot;gp&quot;
@@ -3038,7 +4212,11 @@ orientation?: any = &quot;vertical&quot;</code></pre>
               <pre><code>const RTLCheck = () =&gt; &lt;div dir=&quot;rtl&quot; className=&quot;w-[300px]&quot;&gt;
     &lt;RadioGroup
         options={[
-          { value: &quot;yes&quot;, label: &quot;نعم، أريد تأمين السفر&quot;, description: &quot;تغطية تأمينية كاملة ضد الحوادث&quot; },
+          {
+            value: &quot;yes&quot;,
+            label: &quot;نعم، أريد تأمين السفر&quot;,
+            description: &quot;تغطية تأمينية كاملة ضد الحوادث&quot;,
+          },
           { value: &quot;no&quot;, label: &quot;لا، شكراً لك&quot; },
         ]}
         defaultValue=&quot;no&quot;
@@ -3057,19 +4235,19 @@ orientation?: any = &quot;vertical&quot;</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
-  aria-label="Select">
+  aria-label="ScrollArea">
   <div class="head">
     <div class="title">
-      <h2><span class="status-dot dot-ok"></span> Select</h2>
+      <h2><span class="status-dot dot-ok"></span> ScrollArea</h2>
       <div class="badges">
-        <label for="c-17-forms-select-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-17-forms-select-info" class="badge info as-toggle">1 info</label>
-        <label for="c-17-forms-select-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-29-layout-scrollarea-props" class="badge ok as-toggle">1 prop type</label>
+        <label for="c-29-layout-scrollarea-info" class="badge info as-toggle">1 info</label>
+        <label for="c-29-layout-scrollarea-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
     </div>
-    <div class="meta" title="./src/components/ui/select.stories.tsx">forms-select · ./src/components/ui/select.stories.tsx</div>
+    <div class="meta" title="./src/components/layout/scroll-area.stories.tsx">layout-scrollarea · ./src/components/layout/scroll-area.stories.tsx</div>
     
     
     
@@ -3077,11 +4255,11 @@ orientation?: any = &quot;vertical&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-17-forms-select-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-17-forms-select-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-29-layout-scrollarea-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-29-layout-scrollarea-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-17-forms-select-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-29-layout-scrollarea-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3098,11 +4276,321 @@ orientation?: any = &quot;vertical&quot;</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen)</small></span>
-              <span class="badge ok">6 prop types</span>
+              <span class="badge ok">1 prop type</span>
+            </div>
+            <pre><code>Component: src\components\layout\scroll-area.tsx::ScrollArea</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>orientation?: &quot;vertical&quot; | &quot;horizontal&quot; | &quot;both&quot; = &quot;vertical&quot;</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { ScrollArea } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; (
+  &lt;ScrollArea className=&quot;h-[200px] w-[300px] rounded-md border border-border p-4&quot;&gt;
+    &lt;div className=&quot;space-y-4&quot;&gt;
+      &lt;h4 className=&quot;text-sm font-semibold leading-none&quot;&gt;IRCTC Booking Guidelines&lt;/h4&gt;
+      {Array.from({ length: 10 }).map((_, i) =&gt; (
+        &lt;p key={i} className=&quot;text-xs text-muted-foreground leading-normal&quot;&gt;
+          Passenger booking details for ticket reservation under premium quota. Ensure that details match valid ID proofs.
+        &lt;/p&gt;
+      ))}
+    &lt;/div&gt;
+  &lt;/ScrollArea&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Horizontal</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Horizontal = () =&gt; (
+  &lt;ScrollArea orientation=&quot;horizontal&quot; className=&quot;w-[300px] rounded-md border border-border p-4 whitespace-nowrap&quot;&gt;
+    &lt;div className=&quot;flex gap-4 p-1&quot;&gt;
+      {Array.from({ length: 10 }).map((_, i) =&gt; (
+        &lt;div key={i} className=&quot;h-16 w-24 shrink-0 rounded bg-accent flex items-center justify-center text-xs font-semibold&quot;&gt;
+          Station {i + 1}
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  &lt;/ScrollArea&gt;
+);</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="SearchOverlay">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> SearchOverlay</h2>
+      <div class="badges">
+        <label for="c-30-navigation-searchoverlay-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-30-navigation-searchoverlay-info" class="badge info as-toggle">1 info</label>
+        <label for="c-30-navigation-searchoverlay-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/navigation/search-overlay.stories.tsx">navigation-searchoverlay · ./src/components/navigation/search-overlay.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-30-navigation-searchoverlay-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-30-navigation-searchoverlay-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-30-navigation-searchoverlay-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">7 prop types</span>
+            </div>
+            <pre><code>Component: src\components\navigation\search-overlay.tsx::SearchOverlay</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>className?: string
+
+filtersSlot?: React.ReactNode
+
+footerSlot?: React.ReactNode
+
+inputSlot?: React.ReactNode
+
+isOpen: boolean
+
+onOpenChange: (open: boolean) =&gt; void
+
+resultsSlot?: React.ReactNode</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { SearchOverlay } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;SearchOverlay
+    isOpen
+    onOpenChange={() =&gt; {}}
+    inputSlot={(&lt;input
+      type=&quot;text&quot;
+      placeholder=&quot;Search trains, routes, or stations...&quot;
+      className=&quot;w-full bg-transparent border-0 outline-none text-sm placeholder:text-muted-foreground&quot;
+    /&gt;)}
+    filtersSlot={(&lt;div className=&quot;flex gap-2&quot;&gt;
+      &lt;span className=&quot;text-xs border px-2 py-0.5 rounded-full bg-background cursor-pointer hover:bg-accent&quot;&gt;All&lt;/span&gt;
+      &lt;span className=&quot;text-xs border px-2 py-0.5 rounded-full bg-background cursor-pointer hover:bg-accent&quot;&gt;Trains&lt;/span&gt;
+      &lt;span className=&quot;text-xs border px-2 py-0.5 rounded-full bg-background cursor-pointer hover:bg-accent&quot;&gt;Stations&lt;/span&gt;
+    &lt;/div&gt;)}
+    resultsSlot={(&lt;div className=&quot;p-4 text-center text-sm text-muted-foreground&quot;&gt;Type something to search...
+            &lt;/div&gt;)}
+    footerSlot={(&lt;div className=&quot;flex justify-between w-full&quot;&gt;
+      &lt;span&gt;Use arrow keys to navigate&lt;/span&gt;
+      &lt;span&gt;Esc to close&lt;/span&gt;
+    &lt;/div&gt;)} /&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="Section">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Section</h2>
+      <div class="badges">
+        
+        <label for="c-31-layout-section-info" class="badge info as-toggle">1 info</label>
+        <label for="c-31-layout-section-stories" class="badge ok as-toggle">2 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/layout/section.stories.tsx">layout-section · ./src/components/layout/section.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-31-layout-section-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-31-layout-section-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Section } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;Section spacing=&quot;md&quot;&gt;(&lt;div className=&quot;bg-accent border border-border rounded p-6&quot;&gt;Section spacing md content (paddings: py-10 md:py-12)
+            &lt;/div&gt;)&lt;/Section&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">With Divider</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithDivider = () =&gt; &lt;Section spacing=&quot;lg&quot; divider&gt;(&lt;div className=&quot;bg-accent border border-border rounded p-6&quot;&gt;Section spacing lg content with bottom divider
+            &lt;/div&gt;)&lt;/Section&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="Select">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Select</h2>
+      <div class="badges">
+        <label for="c-32-forms-select-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-32-forms-select-info" class="badge info as-toggle">1 info</label>
+        <label for="c-32-forms-select-stories" class="badge ok as-toggle">5 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/ui/select.stories.tsx">forms-select · ./src/components/ui/select.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-32-forms-select-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-32-forms-select-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-32-forms-select-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">8 prop types</span>
             </div>
             <pre><code>Component: src\components\ui\select.tsx::Select</code></pre>
             <pre><code>Props:</code></pre>
-            <pre><code>className?: string
+            <pre><code>aria-label?: string
+
+aria-labelledby?: string
+
+className?: string
 
 error?: boolean
 
@@ -3201,14 +4689,125 @@ placeholder?: string = &quot;Select option&quot;</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="Sidebar">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Sidebar</h2>
+      <div class="badges">
+        <label for="c-33-navigation-sidebar-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-33-navigation-sidebar-info" class="badge info as-toggle">1 info</label>
+        <label for="c-33-navigation-sidebar-stories" class="badge ok as-toggle">3 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/navigation/sidebar.stories.tsx">navigation-sidebar · ./src/components/navigation/sidebar.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-33-navigation-sidebar-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-33-navigation-sidebar-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-33-navigation-sidebar-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">6 prop types</span>
+            </div>
+            <pre><code>Component: src\components\navigation\sidebar.tsx::Sidebar</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>collapsed?: boolean = false
+
+groups: SidebarGroup[]
+
+mini?: boolean = false
+
+onCollapseChange?: (collapsed: boolean) =&gt; void
+
+pinned?: boolean
+
+variant?: &quot;persistent&quot; | &quot;floating&quot; = &quot;persistent&quot;</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { LayoutDashboard, Settings, Train } from "lucide-react";
+import { Sidebar } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;Sidebar groups={mockGroups} variant=&quot;persistent&quot; collapsed={false} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Floating</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Floating = () =&gt; &lt;Sidebar groups={mockGroups} variant=&quot;floating&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Collapsed</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Collapsed = () =&gt; &lt;Sidebar groups={mockGroups} collapsed /&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="Skeleton">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Skeleton</h2>
       <div class="badges">
         
-        <label for="c-18-feedback-skeleton-info" class="badge info as-toggle">1 info</label>
-        <label for="c-18-feedback-skeleton-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-34-feedback-skeleton-info" class="badge info as-toggle">1 info</label>
+        <label for="c-34-feedback-skeleton-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -3221,8 +4820,8 @@ placeholder?: string = &quot;Select option&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-18-feedback-skeleton-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-18-feedback-skeleton-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-34-feedback-skeleton-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-34-feedback-skeleton-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -3356,9 +4955,9 @@ placeholder?: string = &quot;Select option&quot;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Slider</h2>
       <div class="badges">
-        <label for="c-19-forms-slider-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-19-forms-slider-info" class="badge info as-toggle">1 info</label>
-        <label for="c-19-forms-slider-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-35-forms-slider-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-35-forms-slider-info" class="badge info as-toggle">1 info</label>
+        <label for="c-35-forms-slider-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -3371,11 +4970,11 @@ placeholder?: string = &quot;Select option&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-19-forms-slider-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-19-forms-slider-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-35-forms-slider-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-35-forms-slider-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-19-forms-slider-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-35-forms-slider-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3513,8 +5112,8 @@ step?: any = 1</code></pre>
       <h2><span class="status-dot dot-ok"></span> Spinner</h2>
       <div class="badges">
         
-        <label for="c-20-feedback-spinner-info" class="badge info as-toggle">1 info</label>
-        <label for="c-20-feedback-spinner-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-36-feedback-spinner-info" class="badge info as-toggle">1 info</label>
+        <label for="c-36-feedback-spinner-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -3527,8 +5126,8 @@ step?: any = 1</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-20-feedback-spinner-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-20-feedback-spinner-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-36-feedback-spinner-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-36-feedback-spinner-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -3617,14 +5216,303 @@ step?: any = 1</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="SplitView">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> SplitView</h2>
+      <div class="badges">
+        <label for="c-37-layout-splitview-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-37-layout-splitview-info" class="badge info as-toggle">1 info</label>
+        <label for="c-37-layout-splitview-stories" class="badge ok as-toggle">2 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/layout/split-view.stories.tsx">layout-splitview · ./src/components/layout/split-view.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-37-layout-splitview-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-37-layout-splitview-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-37-layout-splitview-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">2 prop types</span>
+            </div>
+            <pre><code>Component: src\components\layout\split-view.tsx::SplitView</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>left: React.ReactNode
+
+right: React.ReactNode</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { SplitView } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;SplitView
+    ratio=&quot;1:1&quot;
+    gap=&quot;md&quot;
+    left={(&lt;div className=&quot;bg-accent border border-border rounded-lg p-8 text-center text-accent-foreground font-semibold&quot;&gt;Left Column Content
+            &lt;/div&gt;)}
+    right={(&lt;div className=&quot;bg-accent border border-border rounded-lg p-8 text-center text-accent-foreground font-semibold&quot;&gt;Right Column Content
+            &lt;/div&gt;)} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Sidebar Like</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const SidebarLike = () =&gt; &lt;SplitView
+    ratio=&quot;1:3&quot;
+    gap=&quot;lg&quot;
+    left={(&lt;div className=&quot;bg-accent border border-border rounded-lg p-8 text-center text-accent-foreground font-semibold&quot;&gt;Left Menu (1/4)
+            &lt;/div&gt;)}
+    right={(&lt;div className=&quot;bg-accent/40 border border-border rounded-lg p-8 text-center text-accent-foreground font-semibold h-[200px]&quot;&gt;Right Body Content (3/4)
+            &lt;/div&gt;)} /&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="Stack">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Stack</h2>
+      <div class="badges">
+        
+        <label for="c-38-layout-stack-info" class="badge info as-toggle">1 info</label>
+        <label for="c-38-layout-stack-stories" class="badge ok as-toggle">2 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/layout/stack.stories.tsx">layout-stack · ./src/components/layout/stack.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-38-layout-stack-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-38-layout-stack-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Stack } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;Stack gap=&quot;md&quot; align=&quot;start&quot;&gt;(&lt;&gt;
+      &lt;div className=&quot;bg-primary text-primary-foreground p-3 rounded&quot;&gt;Item 1&lt;/div&gt;
+      &lt;div className=&quot;bg-primary text-primary-foreground p-3 rounded&quot;&gt;Item 2&lt;/div&gt;
+      &lt;div className=&quot;bg-primary text-primary-foreground p-3 rounded&quot;&gt;Item 3&lt;/div&gt;
+    &lt;/&gt;)&lt;/Stack&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Centered</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Centered = () =&gt; &lt;Stack gap=&quot;lg&quot; align=&quot;center&quot;&gt;(&lt;&gt;
+      &lt;div className=&quot;bg-primary text-primary-foreground p-3 rounded w-32 text-center&quot;&gt;Item 1&lt;/div&gt;
+      &lt;div className=&quot;bg-primary text-primary-foreground p-3 rounded w-32 text-center&quot;&gt;Item 2&lt;/div&gt;
+      &lt;div className=&quot;bg-primary text-primary-foreground p-3 rounded w-32 text-center&quot;&gt;Item 3&lt;/div&gt;
+    &lt;/&gt;)&lt;/Stack&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="StickyRegion">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> StickyRegion</h2>
+      <div class="badges">
+        <label for="c-39-layout-stickyregion-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-39-layout-stickyregion-info" class="badge info as-toggle">1 info</label>
+        <label for="c-39-layout-stickyregion-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/layout/sticky-region.stories.tsx">layout-stickyregion · ./src/components/layout/sticky-region.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-39-layout-stickyregion-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-39-layout-stickyregion-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-39-layout-stickyregion-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">3 prop types</span>
+            </div>
+            <pre><code>Component: src\components\layout\sticky-region.tsx::StickyRegion</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>offset?: number = 0
+
+position?: &quot;top&quot; | &quot;bottom&quot; = &quot;top&quot;
+
+zIndex?: number = 30</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { StickyRegion } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; (
+  &lt;div className=&quot;h-[400px] overflow-auto border border-border rounded relative p-4 bg-muted/20&quot;&gt;
+    &lt;div className=&quot;h-10 text-xs text-muted-foreground&quot;&gt;Scroll down to see sticky effect...&lt;/div&gt;
+    &lt;StickyRegion className=&quot;bg-primary text-primary-foreground p-3 rounded shadow-md text-center font-bold&quot;&gt;
+      Sticky Header Region
+    &lt;/StickyRegion&gt;
+    &lt;div className=&quot;h-[600px] mt-4 text-xs text-muted-foreground&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. More content scrolling below...
+    &lt;/div&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="Switch">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Switch</h2>
       <div class="badges">
-        <label for="c-21-forms-switch-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-21-forms-switch-info" class="badge info as-toggle">1 info</label>
-        <label for="c-21-forms-switch-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-40-forms-switch-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-40-forms-switch-info" class="badge info as-toggle">1 info</label>
+        <label for="c-40-forms-switch-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -3637,11 +5525,11 @@ step?: any = 1</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-21-forms-switch-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-21-forms-switch-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-40-forms-switch-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-40-forms-switch-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-21-forms-switch-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-40-forms-switch-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3746,14 +5634,105 @@ label?: string</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="Tabs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Tabs</h2>
+      <div class="badges">
+        <label for="c-41-navigation-tabs-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-41-navigation-tabs-info" class="badge info as-toggle">1 info</label>
+        <label for="c-41-navigation-tabs-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/navigation/tabs.stories.tsx">navigation-tabs · ./src/components/navigation/tabs.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-41-navigation-tabs-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-41-navigation-tabs-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-41-navigation-tabs-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">5 prop types</span>
+            </div>
+            <pre><code>Component: src\components\navigation\tabs.tsx::Tabs</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>contentClassName?: string
+
+items: TabItem[]
+
+listClassName?: string
+
+tabsClassName?: string
+
+triggerClassName?: string</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { FileText, Info, Train } from "lucide-react";
+import { Tabs } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;Tabs items={mockItems} /&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="Textarea">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Textarea</h2>
       <div class="badges">
-        <label for="c-22-foundations-textarea-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-22-foundations-textarea-info" class="badge info as-toggle">1 info</label>
-        <label for="c-22-foundations-textarea-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-42-foundations-textarea-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-42-foundations-textarea-info" class="badge info as-toggle">1 info</label>
+        <label for="c-42-foundations-textarea-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -3766,11 +5745,11 @@ label?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-22-foundations-textarea-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-22-foundations-textarea-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-42-foundations-textarea-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-42-foundations-textarea-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-22-foundations-textarea-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-42-foundations-textarea-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3849,6 +5828,163 @@ helperText?: string</code></pre>
 </article>
 <article
   class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="ThemeSwitcher">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> ThemeSwitcher</h2>
+      <div class="badges">
+        <label for="c-43-navigation-themeswitcher-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-43-navigation-themeswitcher-info" class="badge info as-toggle">1 info</label>
+        <label for="c-43-navigation-themeswitcher-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/navigation/theme-switcher.stories.tsx">navigation-themeswitcher · ./src/components/navigation/theme-switcher.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-43-navigation-themeswitcher-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-43-navigation-themeswitcher-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-43-navigation-themeswitcher-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">2 prop types</span>
+            </div>
+            <pre><code>Component: src\components\navigation\theme-switcher.tsx::ThemeSwitcher</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>className?: string
+
+triggerClassName?: string</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { ThemeProvider } from "next-themes";
+import { ThemeSwitcher } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;ThemeSwitcher /&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="ThemeToggle">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> ThemeToggle</h2>
+      <div class="badges">
+        
+        <label for="c-44-navigation-themetoggle-info" class="badge info as-toggle">1 info</label>
+        <label for="c-44-navigation-themetoggle-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/navigation/theme-toggle.stories.tsx">navigation-themetoggle · ./src/components/navigation/theme-toggle.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-44-navigation-themetoggle-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-44-navigation-themetoggle-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { ThemeProvider } from "next-themes";
+import { ThemeToggle } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;ThemeToggle /&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
   has-error 
   has-info 
   has-story-error
@@ -3859,9 +5995,9 @@ helperText?: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-err"></span> ToastDemo</h2>
       <div class="badges">
-        <label for="c-23-feedback-toast-err" class="badge err as-toggle">prop type error</label>
-        <label for="c-23-feedback-toast-info" class="badge info as-toggle">1 info</label>
-        <label for="c-23-feedback-toast-stories" class="badge err as-toggle">1/2 story errors</label>
+        <label for="c-45-feedback-toast-err" class="badge err as-toggle">prop type error</label>
+        <label for="c-45-feedback-toast-info" class="badge info as-toggle">1 info</label>
+        <label for="c-45-feedback-toast-stories" class="badge err as-toggle">1/2 story errors</label>
         
         
       </div>
@@ -3873,9 +6009,9 @@ helperText?: string</code></pre>
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-23-feedback-toast-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-23-feedback-toast-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-23-feedback-toast-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-45-feedback-toast-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-45-feedback-toast-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-45-feedback-toast-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -3887,13 +6023,13 @@ helperText?: string</code></pre>
     <div class="note err">
       <div class="note-title">Prop type error</div>
       <div class="note-body"><pre><code>No component file found for the &quot;ToastDemo&quot; component.
-  46 | };
-  47 |
-&gt; 48 | const meta = {
+  54 | };
+  55 |
+&gt; 56 | const meta = {
      | ^
-  49 |   title: &quot;Feedback/Toast&quot;,
-  50 |   component: ToastDemo,
-  51 |   decorators: [
+  57 |   title: &quot;Feedback/Toast&quot;,
+  58 |   component: ToastDemo,
+  59 |   decorators: [
 
 ./src/components/ui/toast/toast.stories.tsx:
 import type { Meta, StoryObj } from &quot;@storybook/nextjs-vite&quot;;
@@ -3935,10 +6071,18 @@ const ToastDemo = () =&gt; {
   return (
     &lt;div className=&quot;flex flex-wrap gap-3&quot;&gt;
       &lt;Button onClick={triggerSuccess}&gt;Success Toast&lt;/Button&gt;
-      &lt;Button onClick={triggerWarning} variant=&quot;outline&quot;&gt;Warning Toast&lt;/Button&gt;
-      &lt;Button onClick={triggerError} variant=&quot;destructive&quot;&gt;Error Toast&lt;/Button&gt;
-      &lt;Button onClick={triggerLoading} variant=&quot;secondary&quot;&gt;Loading Toast (3s)&lt;/Button&gt;
-      &lt;Button onClick={triggerPromise} className=&quot;bg-indigo-600 text-white hover:bg-indigo-700&quot;&gt;Promise Toast&lt;/Button&gt;
+      &lt;Button onClick={triggerWarning} variant=&quot;outline&quot;&gt;
+        Warning Toast
+      &lt;/Button&gt;
+      &lt;Button onClick={triggerError} variant=&quot;destructive&quot;&gt;
+        Error Toast
+      &lt;/Button&gt;
+      &lt;Button onClick={triggerLoading} variant=&quot;secondary&quot;&gt;
+        Loading Toast (3s)
+      &lt;/Button&gt;
+      &lt;Button onClick={triggerPromise} className=&quot;bg-indigo-600 text-white hover:bg-indigo-700&quot;&gt;
+        Promise Toast
+      &lt;/Button&gt;
     &lt;/div&gt;
   );
 };
@@ -4037,9 +6181,9 @@ export const RTLCheck: Story = {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Typography</h2>
       <div class="badges">
-        <label for="c-24-foundations-typography-err" class="badge err as-toggle">prop type error</label>
-        <label for="c-24-foundations-typography-info" class="badge info as-toggle">1 info</label>
-        <label for="c-24-foundations-typography-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-46-foundations-typography-err" class="badge err as-toggle">prop type error</label>
+        <label for="c-46-foundations-typography-info" class="badge info as-toggle">1 info</label>
+        <label for="c-46-foundations-typography-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -4051,9 +6195,9 @@ export const RTLCheck: Story = {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-24-foundations-typography-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-24-foundations-typography-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-24-foundations-typography-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-46-foundations-typography-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-46-foundations-typography-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-46-foundations-typography-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -4252,6 +6396,117 @@ export const AllScales: StoryObj = {
     
   </div>
 </article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="UserMenu">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> UserMenu</h2>
+      <div class="badges">
+        <label for="c-47-navigation-usermenu-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-47-navigation-usermenu-info" class="badge info as-toggle">1 info</label>
+        <label for="c-47-navigation-usermenu-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/navigation/user-menu.stories.tsx">navigation-usermenu · ./src/components/navigation/user-menu.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-47-navigation-usermenu-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-47-navigation-usermenu-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-47-navigation-usermenu-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">5 prop types</span>
+            </div>
+            <pre><code>Component: src\components\navigation\user-menu.tsx::UserMenu</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>avatarUrl?: string
+
+className?: string
+
+email: string
+
+groups: {
+  label?: string;
+  items: UserMenuAction[];
+}[]
+
+name: string</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { CreditCard, LogOut, Settings, User } from "lucide-react";
+import { UserMenu } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;UserMenu
+    name=&quot;Vishal Singh&quot;
+    email=&quot;vishal@travelcore.com&quot;
+    groups={[
+      {
+        label: &quot;Settings&quot;,
+        items: [
+          { label: &quot;My Profile&quot;, icon: &lt;User className=&quot;h-4 w-4&quot; /&gt; },
+          { label: &quot;Billings&quot;, icon: &lt;CreditCard className=&quot;h-4 w-4&quot; /&gt; },
+          { label: &quot;Preferences&quot;, icon: &lt;Settings className=&quot;h-4 w-4&quot; /&gt; },
+        ],
+      },
+      {
+        items: [
+          { label: &quot;Log Out&quot;, icon: &lt;LogOut className=&quot;h-4 w-4&quot; /&gt;, danger: true },
+        ],
+      },
+    ]} /&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
     </div>
     <div class="error-groups" role="region" aria-label="Prop type error groups">
         <section class="group">
@@ -4302,13 +6557,13 @@ export const AllScales: StoryObj = {
     <div class="note err">
       <div class="note-title">Prop type error</div>
       <div class="note-body"><pre><code>No component file found for the &quot;ToastDemo&quot; component.
-  46 | };
-  47 |
-&gt; 48 | const meta = {
+  54 | };
+  55 |
+&gt; 56 | const meta = {
      | ^
-  49 |   title: &quot;Feedback/Toast&quot;,
-  50 |   component: ToastDemo,
-  51 |   decorators: [
+  57 |   title: &quot;Feedback/Toast&quot;,
+  58 |   component: ToastDemo,
+  59 |   decorators: [
 
 ./src/components/ui/toast/toast.stories.tsx:
 import type { Meta, StoryObj } from &quot;@storybook/nextjs-vite&quot;;
@@ -4350,10 +6605,18 @@ const ToastDemo = () =&gt; {
   return (
     &lt;div className=&quot;flex flex-wrap gap-3&quot;&gt;
       &lt;Button onClick={triggerSuccess}&gt;Success Toast&lt;/Button&gt;
-      &lt;Button onClick={triggerWarning} variant=&quot;outline&quot;&gt;Warning Toast&lt;/Button&gt;
-      &lt;Button onClick={triggerError} variant=&quot;destructive&quot;&gt;Error Toast&lt;/Button&gt;
-      &lt;Button onClick={triggerLoading} variant=&quot;secondary&quot;&gt;Loading Toast (3s)&lt;/Button&gt;
-      &lt;Button onClick={triggerPromise} className=&quot;bg-indigo-600 text-white hover:bg-indigo-700&quot;&gt;Promise Toast&lt;/Button&gt;
+      &lt;Button onClick={triggerWarning} variant=&quot;outline&quot;&gt;
+        Warning Toast
+      &lt;/Button&gt;
+      &lt;Button onClick={triggerError} variant=&quot;destructive&quot;&gt;
+        Error Toast
+      &lt;/Button&gt;
+      &lt;Button onClick={triggerLoading} variant=&quot;secondary&quot;&gt;
+        Loading Toast (3s)
+      &lt;/Button&gt;
+      &lt;Button onClick={triggerPromise} className=&quot;bg-indigo-600 text-white hover:bg-indigo-700&quot;&gt;
+        Promise Toast
+      &lt;/Button&gt;
     &lt;/div&gt;
   );
 };

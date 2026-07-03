@@ -294,3 +294,171 @@ When creating a new design system component, follow this exact workflow:
   - `onRetry?: () => void`
   - `actions?: React.ReactNode` (Allows composable buttons like Go Home, Contact Support)
 - **Composition**: Supports children layout content.
+
+---
+
+## ✦ 10. Layout Components
+
+### 10.1 App Shell
+- **Purpose**: Structural layout wrapper coordinating sticky header, left/right sidebars, main contents, and footers.
+- **API Props**:
+  - `header?: React.ReactNode`
+  - `sidebar?: React.ReactNode`
+  - `rightSidebar?: React.ReactNode`
+  - `footer?: React.ReactNode`
+  - `children: React.ReactNode`
+
+### 10.2 Page Container
+- **Purpose**: Max-width structural bounds container.
+- **API Props**:
+  - `size?: "sm" | "md" | "lg" | "xl" | "full"`
+
+### 10.3 Section
+- **Purpose**: Vertical spacing wrapper with optional division borders.
+- **API Props**:
+  - `spacing?: "none" | "sm" | "md" | "lg" | "xl"`
+  - `divider?: boolean`
+
+### 10.4 Content Grid
+- **Purpose**: Responsive CSS-Grid container mapping column configurations.
+- **API Props**:
+  - `cols?: 1 | 2 | 3 | 4 | "sidebar" | "split"`
+  - `gap?: "none" | "sm" | "md" | "lg" | "xl"`
+
+### 10.5 Stack
+- **Purpose**: Flex direction column primitive spacing helper.
+- **API Props**:
+  - `gap?: "none" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl"`
+  - `align?: "start" | "center" | "end" | "stretch"`
+  - `justify?: "start" | "center" | "end" | "between"`
+
+### 10.6 Cluster
+- **Purpose**: Flex direction row inline spacing helper with wrapping.
+- **API Props**:
+  - `gap?: "none" | "xs" | "sm" | "md" | "lg" | "xl"`
+  - `align?: "start" | "center" | "end" | "baseline"`
+  - `justify?: "start" | "center" | "end" | "between" | "around"`
+  - `wrap?: boolean`
+
+### 10.7 Split View
+- **Purpose**: Responsive double-pane split view container.
+- **API Props**:
+  - `ratio?: "1:1" | "2:1" | "1:2" | "3:1" | "1:3"`
+  - `gap?: "none" | "sm" | "md" | "lg"`
+  - `left: React.ReactNode`
+  - `right: React.ReactNode`
+
+### 10.8 Scroll Area
+- **Purpose**: Wraps Radix ScrollArea to display custom, styled scrollbars.
+- **API Props**:
+  - `orientation?: "vertical" | "horizontal" | "both"`
+
+### 10.9 Sticky Region
+- **Purpose**: Sticky boundary container region.
+- **API Props**:
+  - `position?: "top" | "bottom"`
+  - `offset?: number`
+  - `zIndex?: number`
+
+---
+
+## ✦ 11. Navigation Components
+
+### 11.1 Header
+- **Purpose**: Sticky application header with transparent/solid transitions, responsive triggers, and scroll-aware blurs.
+- **API Props**:
+  - `variant?: "solid" | "transparent"`
+  - `glassmorphism?: boolean`
+  - `sticky?: boolean`
+  - `logo?: React.ReactNode`
+  - `navigation?: React.ReactNode`
+  - `actions?: React.ReactNode`
+  - `scrollAware?: boolean`
+
+### 11.2 Navigation Bar
+- **Purpose**: Horizontal desktop navbar with active states, focus rings, and mobile collapse indicators.
+- **API Props**:
+  - `items: Array<{ href: string, label: string, active?: boolean, icon?: React.ReactNode }>`
+  - `collapse?: boolean`
+
+### 11.3 Sidebar
+- **Purpose**: Expandable side drawer with persistent/floating layouts, nesting groups, active states, and collapse states.
+- **API Props**:
+  - `groups: SidebarGroup[]`
+  - `variant?: "persistent" | "floating"`
+  - `collapsed?: boolean`
+  - `mini?: boolean`
+  - `pinned?: boolean`
+
+### 11.4 Mobile Navigation
+- **Purpose**: Bottom tab navigation bar combined with an slide-in gesture-friendly drawer.
+- **API Props**:
+  - `items: MobileNavItem[]`
+  - `drawerContent?: React.ReactNode`
+
+### 11.5 User Menu
+- **Purpose**: Dropdown trigger displaying Avatar, Name, Email, and action groups.
+- **API Props**:
+  - `avatarUrl?: string`
+  - `name: string`
+  - `email: string`
+  - `groups: Array<{ label?: string, items: UserMenuAction[] }>`
+
+### 11.6 Profile Menu
+- **Purpose**: Reusable profile menu trigger displaying an avatar dropdown list.
+- **API Props**:
+  - `avatarUrl?: string`
+  - `fallbackText?: string`
+  - `items?: ProfileMenuItemProps[]`
+
+### 11.7 Notification Menu
+- **Purpose**: Bell icon trigger with a notification count badge, displaying a scrollable list dropdown.
+- **API Props**:
+  - `count?: number`
+  - `children: React.ReactNode`
+
+### 11.8 Breadcrumb
+- **Purpose**: Hierarchy path indicators supporting separator customization and overflow items.
+- **API Props**:
+  - `items: BreadcrumbItem[]`
+  - `separator?: React.ReactNode`
+  - `maxVisibleItems?: number`
+
+### 11.9 Tabs
+- **Purpose**: Radix Tabs primitive wrapper with scroll indicators, badges, and icon support.
+- **API Props**:
+  - `items: TabItem[]`
+
+### 11.10 Pagination
+- **Purpose**: Previous/Next numbered pagination supporting mobile layouts.
+- **API Props**:
+  - `currentPage: number`
+  - `totalPages: number`
+  - `onPageChange: (page: number) => void`
+  - `siblingCount?: number`
+
+### 11.11 Command Palette
+- **Purpose**: Keyboard-driven overlay containing grouped search commands.
+- **API Component Group**:
+  - `<CommandPalette>`
+  - `<CommandPaletteInput>`
+  - `<CommandPaletteList>`
+  - `<CommandPaletteGroup>`
+  - `<CommandPaletteItem>`
+
+### 11.12 Search Overlay
+- **Purpose**: Reusable visual overlay modal panel accepting customizable inner search results through composition.
+- **API Props**:
+  - `isOpen: boolean`
+  - `onOpenChange: (open: boolean) => void`
+  - `inputSlot?: React.ReactNode`
+  - `filtersSlot?: React.ReactNode`
+  - `resultsSlot?: React.ReactNode`
+  - `footerSlot?: React.ReactNode`
+
+### 11.13 Theme Toggle
+- **Purpose**: Single button widget animating theme transitions (Sun/Moon icons) using `next-themes`.
+
+### 11.14 Theme Switcher
+- **Purpose**: Dropdown choice list for themes (Light, Dark, System).
+

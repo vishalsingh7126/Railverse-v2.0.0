@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-CB6TPTYB.js";var t,n=e((()=>{t={tap:{scale:.98,transition:{type:`spring`,stiffness:500,damping:25,mass:.5}},hover:{scale:1.01,transition:{type:`spring`,stiffness:450,damping:25,mass:.6}},cardHover:{y:-2,transition:{type:`spring`,stiffness:400,damping:22}}}}));export{t as n,n as t};

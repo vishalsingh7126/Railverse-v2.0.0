@@ -16,6 +16,8 @@ export interface SelectProps extends React.ComponentPropsWithoutRef<typeof Selec
     disabled?: boolean;
   }>;
   className?: string;
+  "aria-label"?: string;
+  "aria-labelledby"?: string;
 }
 
 export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
