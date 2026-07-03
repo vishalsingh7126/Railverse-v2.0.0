@@ -12,28 +12,28 @@
   /* Theme Token Palette overrides mapped to CSS variables */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
+
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-  
+
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  
+
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  
+
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
-  
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -56,19 +56,59 @@
   --ease-spring-in-out: cubic-bezier(0.68, -0.6, 0.32, 1.6);
   --ease-spring-out: cubic-bezier(0.19, 1, 0.22, 1);
   --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.1);
-  
+
   --animate-accordion-down: accordion-down 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --animate-accordion-up: accordion-up 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-progress-indeterminate: progress-indeterminate 1.5s infinite linear;
+  --animate-circular-dash: circular-dash 1.5s ease-in-out infinite;
 }
 
 @keyframes accordion-down {
-  from { height: 0; }
-  to { height: var(--radix-accordion-content-height); }
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
 }
 
 @keyframes accordion-up {
-  from { height: var(--radix-accordion-content-height); }
-  to { height: 0; }
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@keyframes progress-indeterminate {
+  0% {
+    transform: translateX(-100%) scaleX(0.1);
+    transform-origin: left;
+  }
+  50% {
+    transform: translateX(-20%) scaleX(0.6);
+    transform-origin: left;
+  }
+  100% {
+    transform: translateX(100%) scaleX(0.1);
+    transform-origin: left;
+  }
+}
+
+@keyframes circular-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
 }
 
 /* Base style mappings using a premium slate-neutral design palette */
@@ -76,60 +116,60 @@
   :root {
     --background: hsl(0 0% 100%);
     --foreground: hsl(240 10% 3.9%);
-    
+
     --card: hsl(0 0% 100%);
     --card-foreground: hsl(240 10% 3.9%);
-    
+
     --popover: hsl(0 0% 100%);
     --popover-foreground: hsl(240 10% 3.9%);
-    
+
     --primary: hsl(240 5.9% 10%);
     --primary-foreground: hsl(0 0% 98%);
-    
+
     --secondary: hsl(240 4.8% 95.9%);
     --secondary-foreground: hsl(240 5.9% 10%);
-    
+
     --muted: hsl(240 4.8% 95.9%);
     --muted-foreground: hsl(240 3.8% 46.1%);
-    
+
     --accent: hsl(240 4.8% 95.9%);
     --accent-foreground: hsl(240 5.9% 10%);
-    
+
     --destructive: hsl(0 84.2% 60.2%);
     --destructive-foreground: hsl(0 0% 98%);
-    
+
     --border: hsl(240 5.9% 90%);
     --input: hsl(240 5.9% 90%);
     --ring: hsl(240 5.9% 10%);
-    
+
     --radius: 0.5rem;
   }
 
   .dark {
     --background: hsl(240 10% 3.9%);
     --foreground: hsl(0 0% 98%);
-    
+
     --card: hsl(240 10% 3.9%);
     --card-foreground: hsl(0 0% 98%);
-    
+
     --popover: hsl(240 10% 3.9%);
     --popover-foreground: hsl(0 0% 98%);
-    
+
     --primary: hsl(0 0% 98%);
     --primary-foreground: hsl(240 5.9% 10%);
-    
+
     --secondary: hsl(240 3.7% 15.9%);
     --secondary-foreground: hsl(0 0% 98%);
-    
+
     --muted: hsl(240 3.7% 15.9%);
     --muted-foreground: hsl(240 5% 64.9%);
-    
+
     --accent: hsl(240 3.7% 15.9%);
     --accent-foreground: hsl(0 0% 98%);
-    
+
     --destructive: hsl(0 62.8% 30.6%);
     --destructive-foreground: hsl(0 0% 98%);
-    
+
     --border: hsl(240 3.7% 15.9%);
     --input: hsl(240 3.7% 15.9%);
     --ring: hsl(240 4.9% 83.9%);
@@ -142,7 +182,7 @@
     border-color: var(--border);
     outline-color: var(--ring);
   }
-  
+
   body {
     background-color: var(--background);
     color: var(--foreground);

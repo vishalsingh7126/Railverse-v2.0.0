@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { MotionConfig } from "framer-motion";
 
+import { ToastProvider } from "@/components/ui/toast/toast-provider";
+
 // Helper to construct a QueryClient with resilient fetch/retry policies
 function makeQueryClient() {
   return new QueryClient({
@@ -55,7 +57,7 @@ export function RootProvider({ children }: RootProviderProps) {
             mass: 0.8,
           }}
         >
-          {children}
+          <ToastProvider>{children}</ToastProvider>
         </MotionConfig>
       </NextThemesProvider>
     </QueryClientProvider>

@@ -28,15 +28,17 @@ We organize our codebase into a clear layer hierarchy. Elements in higher tiers 
 graph TD
     Foundations[1. Foundations: typography, colors, animations] --> Primitives[2. Primitives: buttons, badges, dividers]
     Primitives --> Surfaces[3. Surfaces: cards, glass-cards]
-    Surfaces --> Blocks[4. Railway Blocks: train cards, status indicators]
-    Blocks --> Pages[5. App Pages: landing page, dashboard]
+    Surfaces --> Forms[4. Forms & Feedback: inputs, select, toaster, progress]
+    Forms --> Blocks[5. Railway Blocks: train cards, status indicators]
+    Blocks --> Pages[6. App Pages: landing page, dashboard]
 ```
 
 1. **Foundations**: CSS variables, typography components, and motion presets.
 2. **Primitives**: Base atomic interactives (e.g., `Button`, `Input`, `Badge`, `Divider`).
 3. **Surfaces**: Container layout panels (e.g., `Card`, `GlassCard`).
-4. **Railway Blocks**: Domain-specific compound units (e.g., `TrainCard`, `AvailabilityMeter`).
-5. **App Pages**: Layout frameworks wrapping blocks together.
+4. **Forms & Feedback**: Layout controls (e.g., `Checkbox`, `DatePicker`, `Toast`, `Spinner`, `EmptyState`).
+5. **Railway Blocks**: Domain-specific compound units (e.g., `TrainCard`, `AvailabilityMeter`).
+6. **App Pages**: Layout frameworks wrapping blocks together.
 
 ---
 
@@ -137,3 +139,158 @@ When creating a new design system component, follow this exact workflow:
    - Automated `axe` accessibility validation.
 4. **Run Checks**: Run typechecking (`npx tsc --noEmit`), linting (`npm run lint`), and tests (`npm run test`) locally.
 5. **Document**: Add the component API table and usage guide in this file (`DESIGN_SYSTEM.md`).
+
+---
+
+## ✦ 8. Form Components
+
+### 8.1 Checkbox
+- **Purpose**: Let users choose binary options (on/off) or select multiple entries from list selections.
+- **API Props**:
+  - `checked?: boolean | "indeterminate"` (Controlled state)
+  - `defaultChecked?: boolean` (Uncontrolled initialization)
+  - `onCheckedChange?: (checked: boolean | "indeterminate") => void`
+  - `disabled?: boolean` (Locked opacity)
+  - `error?: boolean` (Red warning highlight)
+  - `label?: string` (Associated helper text triggers checked state when clicked)
+  - `helperText?: string` (Extra detail text placed beneath the label)
+- **Accessibility**: Toggled by Space keypress. Follows Radix UI checkbox ARIA properties.
+
+### 8.2 Radio Group
+- **Purpose**: Let users select a single choice from a mutually exclusive list.
+- **API Props**:
+  - `options: Array<{ value: string, label: string, description?: string, disabled?: boolean }>`
+  - `value?: string` / `defaultValue?: string`
+  - `onValueChange?: (value: string) => void`
+  - `orientation?: "vertical" | "horizontal"` (Default is vertical)
+  - `disabled?: boolean` / `error?: boolean`
+  - `helperText?: string`
+- **Accessibility**: Arrow key navigation toggles options in group automatically. Exposes proper list grouping tags.
+
+### 8.3 Select
+- **Purpose**: Clean single-selection dropdown list when space is premium.
+- **API Props**:
+  - `options: Array<{ value: string, label: string, disabled?: boolean }>`
+  - `placeholder?: string`
+  - `disabled?: boolean` / `error?: boolean` / `loading?: boolean` (Triggers loader inside choice trigger)
+  - `value?: string` / `defaultValue?: string`
+  - `onValueChange?: (value: string) => void`
+- **Accessibility**: Keyboard Arrow Up/Down traversal, selects on Enter, dismisses on Escape.
+
+### 8.4 Combobox
+- **Purpose**: Rich auto-suggestion dropdown combining filter inputs with selection lists.
+- **API Props**:
+  - `options: Array<{ value: string, label: string }>`
+  - `value?: string` / `defaultValue?: string`
+  - `onChange?: (value: string) => void`
+  - `onSearchChange?: (search: string) => void` (Delegates filtering to parent for async loads)
+  - `loading?: boolean`
+  - `disabled?: boolean` / `error?: boolean`
+  - `emptyState?: React.ReactNode`
+- **Accessibility**: Auto focus search inputs, list item selection via arrow keys and enter commands.
+
+### 8.5 Switch
+- **Purpose**: Toggles preference settings or options instantly.
+- **API Props**:
+  - `checked?: boolean` / `onCheckedChange?: (checked: boolean) => void`
+  - `label?: string` / `description?: string`
+  - `disabled?: boolean`
+- **Accessibility**: Spacebar toggles values, includes dynamic sliding track thumbs.
+
+### 8.6 Slider
+- **Purpose**: Let users select values from a continuous range (single thumb or double-thumb ranges).
+- **API Props**:
+  - `value?: number[]` / `defaultValue?: number[]`
+  - `onValueChange?: (value: number[]) => void`
+  - `min?: number` / `max?: number` / `step?: number`
+  - `showTicks?: boolean` (Renders label ticks underneath track bounds)
+  - `disabled?: boolean`
+- **Accessibility**: Adjust values using keyboard Arrow keys.
+
+### 8.7 OTP Input
+- **Purpose**: Let users input secure passcode digits (e.g. mobile validation PINs).
+- **API Props**:
+  - `length?: number` (Default is 6 cells)
+  - `value?: string` / `onChange?: (value: string) => void`
+  - `type?: "numeric" | "alphanumeric"`
+  - `mask?: boolean` (Hides characters)
+  - `disabled?: boolean` / `error?: boolean`
+- **Features**: Auto advance focus, backspace focus return shifts, clipboard paste splits.
+
+### 8.8 Date Picker
+- **Purpose**: Calendar picker supporting onward journeys or multi-date return ranges.
+- **API Props**:
+  - `value?: Date | { from?: Date; to?: Date }`
+  - `onChange?: (date: any) => void`
+  - `mode?: "single" | "range"`
+  - `placeholder?: string`
+  - `disabled?: boolean` / `error?: boolean`
+- **Features**: Leverages `react-day-picker` internally. Styled to match Railverse design templates.
+
+---
+
+## ✦ 9. Feedback Components
+
+### 9.1 Alert
+- **Purpose**: Displays system-wide notifications or warnings.
+- **API Props**:
+  - `variant?: "default" | "info" | "success" | "warning" | "error"`
+  - `title?: string` / `description?: string`
+  - `icon?: React.ReactNode` (Optional layout override)
+- **Accessibility**: Renders with semantic `role="alert"` wrapper.
+
+### 9.2 Toast
+- **Purpose**: Snappy global overlay notifications.
+- **API triggers**:
+  - `toast.success("Message", "Title")`
+  - `toast.warning("Message")`
+  - `toast.error("Message")`
+  - `toast.loading("Message")`
+  - `toast.promise(promise, { loading: "...", success: "...", error: "..." })`
+- **Accessibility**: Mounted in a floating corner region with ARIA polite live announcers.
+
+### 9.3 Progress
+- **Purpose**: Track sync loads or journey progress intervals.
+- **API Props**:
+  - `value?: number | null` (Value between 0-100; null triggers custom indeterminate animations)
+  - `variant?: "linear" | "circular"`
+  - `size?: "sm" | "md" | "lg"`
+- **Accessibility**: Exposes `aria-valuenow`, `aria-valuemin`, and `aria-valuemax` to screen readers.
+
+### 9.4 Spinner
+- **Purpose**: Clean loader.
+- **API Props**:
+  - `variant?: "default" | "brand"`
+  - `size?: "xs" | "sm" | "md" | "lg"`
+
+### 9.5 Skeleton
+- **Purpose**: Loading state placeholder blocks.
+- **API Props**:
+  - `variant?: "text" | "avatar" | "card" | "table" | "custom"`
+- **Accessibility**: Halts animations under reduced motion.
+
+### 9.6 Loading Overlay
+- **Purpose**: Portaled glass layout blocks.
+- **API Props**:
+  - `visible: boolean`
+  - `message?: string`
+  - `usePortal?: boolean` (Default is true)
+
+### 9.7 Empty State
+- **Purpose**: Reusable zero-data screen component.
+- **API Props**:
+  - `icon?: React.ReactNode`
+  - `title?: string`
+  - `description?: string`
+  - `action?: React.ReactNode` (Button action triggers)
+  - `illustration?: React.ReactNode` (Visual banner placeholder slot)
+- **Composition**: Supports children layout content.
+
+### 9.8 Error State
+- **Purpose**: Reusable retry panel component.
+- **API Props**:
+  - `title?: string`
+  - `description?: string`
+  - `onRetry?: () => void`
+  - `actions?: React.ReactNode` (Allows composable buttons like Go Home, Contact Support)
+- **Composition**: Supports children layout content.
