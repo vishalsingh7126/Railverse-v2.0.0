@@ -588,13 +588,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">2/48 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">48/48 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">1/153 story errors</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">2/58 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">58/58 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">1/202 story errors</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note info" style="margin-bottom: 16px;">
-            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>1.0s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
+            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>2.3s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
             <pre><code>typescript: {
   reactDocgen: 'react-docgen-typescript',
 }</code></pre>
@@ -890,14 +890,180 @@ sidebar?: React.ReactNode</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="AvailabilityMeter">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> AvailabilityMeter</h2>
+      <div class="badges">
+        <label for="c-2-railway-seat-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-2-railway-seat-info" class="badge info as-toggle">1 info</label>
+        <label for="c-2-railway-seat-stories" class="badge ok as-toggle">6 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/railway/seat/seat.stories.tsx">railway-seat · ./src/components/railway/seat/seat.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-2-railway-seat-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-2-railway-seat-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-2-railway-seat-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">3 prop types</span>
+            </div>
+            <pre><code>Component: src\components\railway\seat\availability-meter.tsx::AvailabilityMeter</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>count: number
+
+status: &quot;available&quot; | &quot;rac&quot; | &quot;waitlist&quot;
+
+totalQuota?: number = 100</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import {
+    AvailabilityMeter,
+    CoachBadge,
+    CoachLegend,
+    SeatBadge,
+    SeatLegend,
+    SeatTypeChip,
+} from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default Meter</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const DefaultMeter = () =&gt; &lt;AvailabilityMeter status=&quot;available&quot; count={45} totalQuota={100} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">RAC Meter</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const RACMeter = () =&gt; &lt;AvailabilityMeter status=&quot;rac&quot; count={12} totalQuota={50} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Waitlist Meter</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WaitlistMeter = () =&gt; &lt;AvailabilityMeter status=&quot;waitlist&quot; count={8} totalQuota={20} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Badges Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const BadgesDemo = () =&gt; (
+  &lt;div className=&quot;flex gap-3 items-center&quot;&gt;
+    &lt;SeatBadge tier=&quot;3A&quot; /&gt;
+    &lt;SeatBadge tier=&quot;2A&quot; /&gt;
+    &lt;SeatBadge tier=&quot;SL&quot; /&gt;
+    &lt;CoachBadge coach=&quot;B1&quot; /&gt;
+    &lt;CoachBadge coach=&quot;A2&quot; /&gt;
+    &lt;SeatTypeChip type=&quot;Lower Berth&quot; /&gt;
+    &lt;SeatTypeChip type=&quot;Side Upper&quot; /&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Coach Legend Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const CoachLegendDemo = () =&gt; (
+  &lt;CoachLegend
+    coaches={[
+      { code: &quot;ENG&quot;, type: &quot;Engine&quot; },
+      { code: &quot;A1&quot;, type: &quot;2AC&quot; },
+      { code: &quot;B1&quot;, type: &quot;3AC&quot;, isSelected: true },
+      { code: &quot;B2&quot;, type: &quot;3AC&quot; },
+      { code: &quot;S1&quot;, type: &quot;Sleeper&quot; },
+    ]}
+  /&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Seat Legend Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const SeatLegendDemo = () =&gt; (
+  &lt;SeatLegend
+    items={[
+      { label: &quot;Available&quot;, colorClass: &quot;bg-green-500&quot; },
+      { label: &quot;Booked&quot;, colorClass: &quot;bg-muted&quot; },
+      { label: &quot;Selected&quot;, colorClass: &quot;bg-primary&quot; },
+    ]}
+  /&gt;
+);</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="Badge">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Badge</h2>
       <div class="badges">
         
-        <label for="c-2-foundations-badge-info" class="badge info as-toggle">1 info</label>
-        <label for="c-2-foundations-badge-stories" class="badge ok as-toggle">7 stories</label>
+        <label for="c-3-foundations-badge-info" class="badge info as-toggle">1 info</label>
+        <label for="c-3-foundations-badge-stories" class="badge ok as-toggle">7 stories</label>
         
         
       </div>
@@ -910,8 +1076,8 @@ sidebar?: React.ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-2-foundations-badge-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-2-foundations-badge-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-3-foundations-badge-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-3-foundations-badge-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -1020,9 +1186,9 @@ sidebar?: React.ReactNode</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Breadcrumb</h2>
       <div class="badges">
-        <label for="c-3-navigation-breadcrumb-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-3-navigation-breadcrumb-info" class="badge info as-toggle">1 info</label>
-        <label for="c-3-navigation-breadcrumb-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-4-navigation-breadcrumb-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-4-navigation-breadcrumb-info" class="badge info as-toggle">1 info</label>
+        <label for="c-4-navigation-breadcrumb-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -1035,11 +1201,11 @@ sidebar?: React.ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-3-navigation-breadcrumb-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-3-navigation-breadcrumb-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-4-navigation-breadcrumb-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-4-navigation-breadcrumb-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-3-navigation-breadcrumb-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-4-navigation-breadcrumb-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1116,9 +1282,9 @@ import { Home } from "lucide-react";</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Button</h2>
       <div class="badges">
-        <label for="c-4-foundations-button-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-4-foundations-button-info" class="badge info as-toggle">1 info</label>
-        <label for="c-4-foundations-button-stories" class="badge ok as-toggle">9 stories</label>
+        <label for="c-5-foundations-button-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-5-foundations-button-info" class="badge info as-toggle">1 info</label>
+        <label for="c-5-foundations-button-stories" class="badge ok as-toggle">9 stories</label>
         
         
       </div>
@@ -1131,11 +1297,11 @@ import { Home } from "lucide-react";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-4-foundations-button-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-4-foundations-button-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-5-foundations-button-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-5-foundations-button-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-4-foundations-button-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-5-foundations-button-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1274,9 +1440,9 @@ type?: any = &quot;button&quot;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Card</h2>
       <div class="badges">
-        <label for="c-5-foundations-card-props" class="badge ok as-toggle">1 prop type</label>
-        <label for="c-5-foundations-card-info" class="badge info as-toggle">1 info</label>
-        <label for="c-5-foundations-card-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-6-foundations-card-props" class="badge ok as-toggle">1 prop type</label>
+        <label for="c-6-foundations-card-info" class="badge info as-toggle">1 info</label>
+        <label for="c-6-foundations-card-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -1289,11 +1455,11 @@ type?: any = &quot;button&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-5-foundations-card-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-5-foundations-card-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-6-foundations-card-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-6-foundations-card-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-5-foundations-card-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-6-foundations-card-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1409,9 +1575,9 @@ type?: any = &quot;button&quot;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Checkbox</h2>
       <div class="badges">
-        <label for="c-6-forms-checkbox-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-6-forms-checkbox-info" class="badge info as-toggle">1 info</label>
-        <label for="c-6-forms-checkbox-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-7-forms-checkbox-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-7-forms-checkbox-info" class="badge info as-toggle">1 info</label>
+        <label for="c-7-forms-checkbox-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -1424,11 +1590,11 @@ type?: any = &quot;button&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-6-forms-checkbox-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-6-forms-checkbox-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-7-forms-checkbox-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-7-forms-checkbox-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-6-forms-checkbox-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-7-forms-checkbox-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1553,8 +1719,8 @@ label?: string</code></pre>
       <h2><span class="status-dot dot-ok"></span> Cluster</h2>
       <div class="badges">
         
-        <label for="c-7-layout-cluster-info" class="badge info as-toggle">1 info</label>
-        <label for="c-7-layout-cluster-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-8-layout-cluster-info" class="badge info as-toggle">1 info</label>
+        <label for="c-8-layout-cluster-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -1567,8 +1733,8 @@ label?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-7-layout-cluster-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-7-layout-cluster-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-8-layout-cluster-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-8-layout-cluster-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -1606,7 +1772,10 @@ label?: string</code></pre>
               
               <pre><code>const Default = () =&gt; &lt;Cluster gap=&quot;sm&quot; justify=&quot;start&quot;&gt;(&lt;&gt;
       {Array.from({ length: 5 }).map((_, i) =&gt; (
-        &lt;div key={i} className=&quot;bg-primary text-primary-foreground p-3 rounded text-xs font-semibold&quot;&gt;
+        &lt;div
+          key={i}
+          className=&quot;bg-primary text-primary-foreground p-3 rounded text-xs font-semibold&quot;
+        &gt;
           Station Tag {i + 1}
         &lt;/div&gt;
       ))}
@@ -1624,7 +1793,9 @@ label?: string</code></pre>
     justify=&quot;between&quot;
     className=&quot;w-[400px] border border-border p-2 rounded-md&quot;&gt;(&lt;&gt;
       &lt;span className=&quot;font-semibold text-sm&quot;&gt;PNR Status&lt;/span&gt;
-      &lt;span className=&quot;bg-green-500/10 text-green-500 text-xs px-2 py-0.5 rounded font-bold&quot;&gt;CNF&lt;/span&gt;
+      &lt;span className=&quot;bg-green-500/10 text-green-500 text-xs px-2 py-0.5 rounded font-bold&quot;&gt;
+        CNF
+      &lt;/span&gt;
     &lt;/&gt;)&lt;/Cluster&gt;;</code></pre>
             </div>
         </div>
@@ -1644,9 +1815,9 @@ label?: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Combobox</h2>
       <div class="badges">
-        <label for="c-8-forms-combobox-props" class="badge ok as-toggle">13 prop types</label>
-        <label for="c-8-forms-combobox-info" class="badge info as-toggle">1 info</label>
-        <label for="c-8-forms-combobox-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-9-forms-combobox-props" class="badge ok as-toggle">13 prop types</label>
+        <label for="c-9-forms-combobox-info" class="badge info as-toggle">1 info</label>
+        <label for="c-9-forms-combobox-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -1659,11 +1830,11 @@ label?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-8-forms-combobox-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-8-forms-combobox-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-9-forms-combobox-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-9-forms-combobox-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-8-forms-combobox-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-9-forms-combobox-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1820,9 +1991,9 @@ value?: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> CommandPalette</h2>
       <div class="badges">
-        <label for="c-9-navigation-commandpalette-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-9-navigation-commandpalette-info" class="badge info as-toggle">1 info</label>
-        <label for="c-9-navigation-commandpalette-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-10-navigation-commandpalette-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-10-navigation-commandpalette-info" class="badge info as-toggle">1 info</label>
+        <label for="c-10-navigation-commandpalette-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -1835,11 +2006,11 @@ value?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-9-navigation-commandpalette-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-9-navigation-commandpalette-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-10-navigation-commandpalette-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-10-navigation-commandpalette-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-9-navigation-commandpalette-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-10-navigation-commandpalette-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1936,8 +2107,8 @@ import { Search, Settings, Train } from "lucide-react";</code></pre>
       <h2><span class="status-dot dot-ok"></span> ContentGrid</h2>
       <div class="badges">
         
-        <label for="c-10-layout-contentgrid-info" class="badge info as-toggle">1 info</label>
-        <label for="c-10-layout-contentgrid-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-11-layout-contentgrid-info" class="badge info as-toggle">1 info</label>
+        <label for="c-11-layout-contentgrid-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -1950,8 +2121,8 @@ import { Search, Settings, Train } from "lucide-react";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-10-layout-contentgrid-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-10-layout-contentgrid-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-11-layout-contentgrid-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-11-layout-contentgrid-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -1989,7 +2160,10 @@ import { Search, Settings, Train } from "lucide-react";</code></pre>
               
               <pre><code>const Default = () =&gt; &lt;ContentGrid cols={3} gap=&quot;md&quot;&gt;(&lt;&gt;
       {Array.from({ length: 6 }).map((_, i) =&gt; (
-        &lt;div key={i} className=&quot;bg-accent border border-border rounded-lg p-8 text-center text-accent-foreground font-semibold&quot;&gt;
+        &lt;div
+          key={i}
+          className=&quot;bg-accent border border-border rounded-lg p-8 text-center text-accent-foreground font-semibold&quot;
+        &gt;
           Grid Item {i + 1}
         &lt;/div&gt;
       ))}
@@ -2023,14 +2197,163 @@ import { Search, Settings, Train } from "lucide-react";</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="CurrentLocationCard">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> CurrentLocationCard</h2>
+      <div class="badges">
+        <label for="c-12-railway-livestatus-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-12-railway-livestatus-info" class="badge info as-toggle">1 info</label>
+        <label for="c-12-railway-livestatus-stories" class="badge ok as-toggle">4 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/railway/live-status/live-status.stories.tsx">railway-livestatus · ./src/components/railway/live-status/live-status.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-12-railway-livestatus-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-12-railway-livestatus-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-12-railway-livestatus-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">6 prop types</span>
+            </div>
+            <pre><code>Component: src\components\railway\live-status\current-location-card.tsx::CurrentLocationCard</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>currentLocation?: React.ReactNode
+
+delay?: React.ReactNode
+
+nextStation?: React.ReactNode
+
+previousStation?: React.ReactNode
+
+speed?: React.ReactNode
+
+timestamp?: React.ReactNode</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import {
+    CurrentLocationCard,
+    DelayIndicator,
+    ETAChip,
+    JourneyHealthIndicator,
+    LiveStatusIndicator,
+    SpeedChip,
+} from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default Card</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const DefaultCard = () =&gt; &lt;CurrentLocationCard
+    currentLocation=&quot;Ratlam Jn (RTM)&quot;
+    previousStation=&quot;Kota Jn (KOTA)&quot;
+    nextStation=&quot;Vadodara Jn (BRC)&quot;
+    delay={&lt;DelayIndicator delayMinutes={15} /&gt;}
+    speed={&lt;SpeedChip speed={110} /&gt;}
+    timestamp=&quot;Last updated 2 mins ago&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Live Dot Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const LiveDotDemo = () =&gt; (
+  &lt;div className=&quot;flex gap-4&quot;&gt;
+    &lt;LiveStatusIndicator isActive={true} /&gt;
+    &lt;LiveStatusIndicator isActive={false} /&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Chips Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const ChipsDemo = () =&gt; (
+  &lt;div className=&quot;flex gap-3 items-center&quot;&gt;
+    &lt;ETAChip scheduledTime=&quot;08:35&quot; actualTime=&quot;08:50&quot; isDelayed={true} /&gt;
+    &lt;ETAChip scheduledTime=&quot;12:00&quot; actualTime=&quot;12:00&quot; /&gt;
+    &lt;SpeedChip speed={130} /&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Health Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const HealthDemo = () =&gt; (
+  &lt;div className=&quot;w-[300px] space-y-4&quot;&gt;
+    &lt;JourneyHealthIndicator score={95} /&gt;
+    &lt;JourneyHealthIndicator score={75} /&gt;
+    &lt;JourneyHealthIndicator score={35} /&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="DatePicker">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> DatePicker</h2>
       <div class="badges">
-        <label for="c-11-forms-datepicker-props" class="badge ok as-toggle">8 prop types</label>
-        <label for="c-11-forms-datepicker-info" class="badge info as-toggle">1 info</label>
-        <label for="c-11-forms-datepicker-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-13-forms-datepicker-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-13-forms-datepicker-info" class="badge info as-toggle">1 info</label>
+        <label for="c-13-forms-datepicker-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -2043,11 +2366,11 @@ import { Search, Settings, Train } from "lucide-react";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-11-forms-datepicker-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-11-forms-datepicker-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-13-forms-datepicker-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-13-forms-datepicker-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-11-forms-datepicker-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-13-forms-datepicker-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2183,9 +2506,9 @@ value?: Date | DateRange</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Divider</h2>
       <div class="badges">
-        <label for="c-12-foundations-divider-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-12-foundations-divider-info" class="badge info as-toggle">1 info</label>
-        <label for="c-12-foundations-divider-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-14-foundations-divider-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-14-foundations-divider-info" class="badge info as-toggle">1 info</label>
+        <label for="c-14-foundations-divider-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -2198,11 +2521,11 @@ value?: Date | DateRange</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-12-foundations-divider-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-12-foundations-divider-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-14-foundations-divider-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-14-foundations-divider-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-12-foundations-divider-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-14-foundations-divider-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2310,9 +2633,9 @@ orientation?: &quot;horizontal&quot; | &quot;vertical&quot; = &quot;horizontal&q
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> EmptyState</h2>
       <div class="badges">
-        <label for="c-13-feedback-emptystate-props" class="badge ok as-toggle">5 prop types</label>
-        <label for="c-13-feedback-emptystate-info" class="badge info as-toggle">1 info</label>
-        <label for="c-13-feedback-emptystate-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-15-feedback-emptystate-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-15-feedback-emptystate-info" class="badge info as-toggle">1 info</label>
+        <label for="c-15-feedback-emptystate-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -2325,11 +2648,11 @@ orientation?: &quot;horizontal&quot; | &quot;vertical&quot; = &quot;horizontal&q
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-13-feedback-emptystate-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-13-feedback-emptystate-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-15-feedback-emptystate-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-15-feedback-emptystate-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-13-feedback-emptystate-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-15-feedback-emptystate-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2459,9 +2782,9 @@ import { Search, Train } from "lucide-react";</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ErrorState</h2>
       <div class="badges">
-        <label for="c-14-feedback-errorstate-props" class="badge ok as-toggle">5 prop types</label>
-        <label for="c-14-feedback-errorstate-info" class="badge info as-toggle">1 info</label>
-        <label for="c-14-feedback-errorstate-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-16-feedback-errorstate-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-16-feedback-errorstate-info" class="badge info as-toggle">1 info</label>
+        <label for="c-16-feedback-errorstate-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -2474,11 +2797,11 @@ import { Search, Train } from "lucide-react";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-14-feedback-errorstate-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-14-feedback-errorstate-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-16-feedback-errorstate-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-16-feedback-errorstate-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-14-feedback-errorstate-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-16-feedback-errorstate-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2590,14 +2913,182 @@ title?: string = &quot;Something went wrong&quot;</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="FareCard">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> FareCard</h2>
+      <div class="badges">
+        <label for="c-17-railway-fare-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-17-railway-fare-info" class="badge info as-toggle">1 info</label>
+        <label for="c-17-railway-fare-stories" class="badge ok as-toggle">5 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/railway/fare/fare.stories.tsx">railway-fare · ./src/components/railway/fare/fare.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-17-railway-fare-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-17-railway-fare-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-17-railway-fare-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">6 prop types</span>
+            </div>
+            <pre><code>Component: src\components\railway\fare\fare-card.tsx::FareCard</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>className?: string
+
+description?: string
+
+isSelected?: boolean = false
+
+price: number
+
+rightSlot?: React.ReactNode
+
+tierName: string</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import {
+    FareBreakdown,
+    FareCard,
+    FareChip,
+    FareComparisonCard,
+    PriceDifferenceBadge,
+} from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default Card</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const DefaultCard = () =&gt; &lt;FareCard
+    tierName=&quot;AC 3 Tier (3A)&quot;
+    price={1250}
+    description=&quot;Includes catering &amp; bedroll services&quot;
+    isSelected={false} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Selected Card</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const SelectedCard = () =&gt; &lt;FareCard
+    tierName=&quot;AC First Class (1A)&quot;
+    price={3450}
+    description=&quot;Coupe/Cabin layout, premium catering&quot;
+    isSelected /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Chips Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const ChipsDemo = () =&gt; (
+  &lt;div className=&quot;flex gap-3 items-center&quot;&gt;
+    &lt;FareChip amount={650} /&gt;
+    &lt;PriceDifferenceBadge difference={-120} /&gt;
+    &lt;PriceDifferenceBadge difference={45} /&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Comparison Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const ComparisonDemo = () =&gt; (
+  &lt;FareComparisonCard
+    className=&quot;w-[400px]&quot;
+    items={[
+      { tierName: &quot;AC 3 Tier (3A)&quot;, price: 1250, difference: -2200, availabilityStatus: &quot;Available 45&quot; },
+      { tierName: &quot;AC 2 Tier (2A)&quot;, price: 2150, difference: -1300, availabilityStatus: &quot;RAC 5&quot; },
+      { tierName: &quot;AC First Class (1A)&quot;, price: 3450, difference: 0, availabilityStatus: &quot;WL 2&quot; },
+    ]}
+  /&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Breakdown Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const BreakdownDemo = () =&gt; (
+  &lt;FareBreakdown
+    className=&quot;w-[350px]&quot;
+    breakdown={[
+      { label: &quot;Base Fare&quot;, amount: 1050 },
+      { label: &quot;Superfast Charge&quot;, amount: 45 },
+      { label: &quot;Reservation Fee&quot;, amount: 40 },
+      { label: &quot;GST (5%)&quot;, amount: 65 },
+    ]}
+    total={1200}
+  /&gt;
+);</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="GlassCard">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> GlassCard</h2>
       <div class="badges">
         
-        <label for="c-15-foundations-glasscard-info" class="badge info as-toggle">1 info</label>
-        <label for="c-15-foundations-glasscard-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-18-foundations-glasscard-info" class="badge info as-toggle">1 info</label>
+        <label for="c-18-foundations-glasscard-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -2610,8 +3101,8 @@ title?: string = &quot;Something went wrong&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-15-foundations-glasscard-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-15-foundations-glasscard-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-18-foundations-glasscard-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-18-foundations-glasscard-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -2681,9 +3172,9 @@ title?: string = &quot;Something went wrong&quot;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Header</h2>
       <div class="badges">
-        <label for="c-16-navigation-header-props" class="badge ok as-toggle">7 prop types</label>
-        <label for="c-16-navigation-header-info" class="badge info as-toggle">1 info</label>
-        <label for="c-16-navigation-header-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-19-navigation-header-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-19-navigation-header-info" class="badge info as-toggle">1 info</label>
+        <label for="c-19-navigation-header-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -2696,11 +3187,11 @@ title?: string = &quot;Something went wrong&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-16-navigation-header-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-16-navigation-header-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-19-navigation-header-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-19-navigation-header-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-16-navigation-header-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-19-navigation-header-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2760,13 +3251,21 @@ variant?: any = &quot;solid&quot;</code></pre>
     variant=&quot;solid&quot;
     logo={&lt;span className=&quot;font-bold text-lg tracking-tight&quot;&gt;Railverse&lt;/span&gt;}
     navigation={(&lt;nav className=&quot;flex gap-6 text-sm font-medium text-muted-foreground&quot;&gt;
-      &lt;a href=&quot;#&quot; className=&quot;text-foreground hover:text-foreground&quot;&gt;Search&lt;/a&gt;
-      &lt;a href=&quot;#&quot; className=&quot;hover:text-foreground&quot;&gt;Schedule&lt;/a&gt;
-      &lt;a href=&quot;#&quot; className=&quot;hover:text-foreground&quot;&gt;PNR Status&lt;/a&gt;
+      &lt;a href=&quot;#&quot; className=&quot;text-foreground hover:text-foreground&quot;&gt;
+        Search
+      &lt;/a&gt;
+      &lt;a href=&quot;#&quot; className=&quot;hover:text-foreground&quot;&gt;
+        Schedule
+      &lt;/a&gt;
+      &lt;a href=&quot;#&quot; className=&quot;hover:text-foreground&quot;&gt;
+        PNR Status
+      &lt;/a&gt;
     &lt;/nav&gt;)}
     actions={(&lt;div className=&quot;flex gap-2&quot;&gt;
       &lt;button className=&quot;px-3 py-1.5 text-xs border rounded-md&quot;&gt;Log In&lt;/button&gt;
-      &lt;button className=&quot;px-3 py-1.5 text-xs bg-primary text-primary-foreground rounded-md&quot;&gt;Sign Up&lt;/button&gt;
+      &lt;button className=&quot;px-3 py-1.5 text-xs bg-primary text-primary-foreground rounded-md&quot;&gt;
+        Sign Up
+      &lt;/button&gt;
     &lt;/div&gt;)} /&gt;;</code></pre>
             </div>
             <div class="note ok">
@@ -2781,10 +3280,15 @@ variant?: any = &quot;solid&quot;</code></pre>
     scrollAware
     logo={&lt;span className=&quot;font-bold text-lg tracking-tight&quot;&gt;Railverse&lt;/span&gt;}
     navigation={(&lt;nav className=&quot;flex gap-6 text-sm font-medium text-muted-foreground&quot;&gt;
-      &lt;a href=&quot;#&quot; className=&quot;hover:text-foreground&quot;&gt;Home&lt;/a&gt;
-      &lt;a href=&quot;#&quot; className=&quot;hover:text-foreground&quot;&gt;Features&lt;/a&gt;
+      &lt;a href=&quot;#&quot; className=&quot;hover:text-foreground&quot;&gt;
+        Home
+      &lt;/a&gt;
+      &lt;a href=&quot;#&quot; className=&quot;hover:text-foreground&quot;&gt;
+        Features
+      &lt;/a&gt;
     &lt;/nav&gt;)}
-    actions={&lt;button className=&quot;px-3 py-1.5 text-xs bg-primary text-primary-foreground rounded-md&quot;&gt;Action&lt;/button&gt;} /&gt;;</code></pre>
+    actions={(&lt;button className=&quot;px-3 py-1.5 text-xs bg-primary text-primary-foreground rounded-md&quot;&gt;Action
+            &lt;/button&gt;)} /&gt;;</code></pre>
             </div>
         </div>
     
@@ -2803,9 +3307,9 @@ variant?: any = &quot;solid&quot;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> IconButton</h2>
       <div class="badges">
-        <label for="c-17-foundations-iconbutton-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-17-foundations-iconbutton-info" class="badge info as-toggle">1 info</label>
-        <label for="c-17-foundations-iconbutton-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-20-foundations-iconbutton-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-20-foundations-iconbutton-info" class="badge info as-toggle">1 info</label>
+        <label for="c-20-foundations-iconbutton-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -2818,11 +3322,11 @@ variant?: any = &quot;solid&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-17-foundations-iconbutton-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-17-foundations-iconbutton-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-20-foundations-iconbutton-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-20-foundations-iconbutton-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-17-foundations-iconbutton-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-20-foundations-iconbutton-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2926,9 +3430,9 @@ import { IconButton } from "railverse-v2";</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Input</h2>
       <div class="badges">
-        <label for="c-18-foundations-input-props" class="badge ok as-toggle">8 prop types</label>
-        <label for="c-18-foundations-input-info" class="badge info as-toggle">1 info</label>
-        <label for="c-18-foundations-input-stories" class="badge ok as-toggle">8 stories</label>
+        <label for="c-21-foundations-input-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-21-foundations-input-info" class="badge info as-toggle">1 info</label>
+        <label for="c-21-foundations-input-stories" class="badge ok as-toggle">8 stories</label>
         
         
       </div>
@@ -2941,11 +3445,11 @@ import { IconButton } from "railverse-v2";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-18-foundations-input-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-18-foundations-input-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-21-foundations-input-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-21-foundations-input-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-18-foundations-input-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-21-foundations-input-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3090,14 +3594,359 @@ import { Mail, Search } from "lucide-react";</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="JourneyCard">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> JourneyCard</h2>
+      <div class="badges">
+        <label for="c-22-railway-journey-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-22-railway-journey-info" class="badge info as-toggle">1 info</label>
+        <label for="c-22-railway-journey-stories" class="badge ok as-toggle">6 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/railway/journey/journey.stories.tsx">railway-journey · ./src/components/railway/journey/journey.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-22-railway-journey-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-22-railway-journey-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-22-railway-journey-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">6 prop types</span>
+            </div>
+            <pre><code>Component: src\components\railway\journey\journey-card.tsx::JourneyCard</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>actions?: React.ReactNode
+
+date?: React.ReactNode
+
+destination?: React.ReactNode
+
+duration?: React.ReactNode
+
+source?: React.ReactNode
+
+status?: &quot;onTime&quot; | &quot;delayed&quot; | &quot;cancelled&quot; | &quot;diverted&quot; = &quot;onTime&quot;</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Clock, MapPin, Navigation } from "lucide-react";
+import { JourneyCard, JourneyHero, JourneyProgress, JourneySummary, JourneyTimeline } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Card On Time</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const CardOnTime = () =&gt; &lt;JourneyCard
+    source=&quot;NDLS&quot;
+    destination=&quot;MMCT&quot;
+    date=&quot;Fri, 4 Jul&quot;
+    duration=&quot;16h 10m&quot;
+    status=&quot;onTime&quot;
+    actions={&lt;button className=&quot;px-3 py-1.5 text-xs bg-primary text-primary-foreground rounded-md&quot;&gt;View details&lt;/button&gt;} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Card Delayed</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const CardDelayed = () =&gt; &lt;JourneyCard
+    source=&quot;HWH&quot;
+    destination=&quot;NDLS&quot;
+    date=&quot;Fri, 4 Jul&quot;
+    duration=&quot;17h 30m&quot;
+    status=&quot;delayed&quot;
+    actions={&lt;button className=&quot;px-3 py-1.5 text-xs bg-primary text-primary-foreground rounded-md&quot;&gt;View details&lt;/button&gt;} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Summary View</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const SummaryView = () =&gt; (
+  &lt;JourneySummary
+    items={[
+      { label: &quot;Train Number&quot;, value: &quot;12952&quot;, icon: &lt;Navigation className=&quot;h-4 w-4&quot; /&gt; },
+      { label: &quot;Journey Date&quot;, value: &quot;04 Jul 2026&quot;, icon: &lt;Clock className=&quot;h-4 w-4&quot; /&gt; },
+      { label: &quot;Halt Count&quot;, value: &quot;7 Stops&quot;, icon: &lt;MapPin className=&quot;h-4 w-4&quot; /&gt; },
+    ]}
+  /&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Progress Indicator</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const ProgressIndicator = () =&gt; (
+  &lt;JourneyProgress
+    percentage={65}
+    currentStation=&quot;Ratlam Jn (RTM)&quot;
+    delayStatus=&quot;onTime&quot;
+    eta=&quot;08:35 AM&quot;
+  /&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Timeline View</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TimelineView = () =&gt; (
+  &lt;JourneyTimeline
+    stops={[
+      { name: &quot;New Delhi (NDLS)&quot;, time: &quot;16:55&quot;, status: &quot;completed&quot;, platform: &quot;3&quot; },
+      { name: &quot;Kota Jn (KOTA)&quot;, time: &quot;22:15&quot;, status: &quot;completed&quot;, platform: &quot;1&quot; },
+      { name: &quot;Ratlam Jn (RTM)&quot;, time: &quot;02:00&quot;, status: &quot;current&quot;, platform: &quot;4&quot;, delayMinutes: 10 },
+      { name: &quot;Vadodara Jn (BRC)&quot;, time: &quot;04:50&quot;, status: &quot;upcoming&quot;, platform: &quot;2&quot; },
+      { name: &quot;Mumbai Central (MMCT)&quot;, time: &quot;08:35&quot;, status: &quot;upcoming&quot;, platform: &quot;5&quot; },
+    ]}
+  /&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Hero Dashboard</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const HeroDashboard = () =&gt; (
+  &lt;JourneyHero
+    className=&quot;w-[600px]&quot;
+    trainInfo={&lt;span className=&quot;text-xs font-bold text-primary&quot;&gt;12952 • Mumbai Rajdhani&lt;/span&gt;}
+    currentStatus=&quot;Approaching Ratlam Jn (RTM)&quot;
+    eta=&quot;ETA: 08:35 AM • Running 10 mins late&quot;
+    progressSlot={
+      &lt;JourneyProgress
+        percentage={60}
+        currentStation=&quot;Kota Jn&quot;
+        delayStatus=&quot;delayed&quot;
+        eta=&quot;08:45 AM&quot;
+      /&gt;
+    }
+    metadata={
+      &lt;div className=&quot;grid grid-cols-2 gap-4&quot;&gt;
+        &lt;div&gt;
+          &lt;span className=&quot;block text-[10px] uppercase font-bold text-muted-foreground&quot;&gt;Source&lt;/span&gt;
+          &lt;span className=&quot;text-sm font-semibold&quot;&gt;New Delhi (NDLS)&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;span className=&quot;block text-[10px] uppercase font-bold text-muted-foreground&quot;&gt;Destination&lt;/span&gt;
+          &lt;span className=&quot;text-sm font-semibold&quot;&gt;Mumbai Central (MMCT)&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    }
+    primaryCta={&lt;button className=&quot;px-4 py-2 text-xs bg-primary text-primary-foreground rounded-lg font-bold&quot;&gt;Track Live&lt;/button&gt;}
+    secondaryCta={&lt;button className=&quot;px-4 py-2 text-xs border rounded-lg font-bold&quot;&gt;Share Status&lt;/button&gt;}
+  /&gt;
+);</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="JourneySkeleton">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> JourneySkeleton</h2>
+      <div class="badges">
+        
+        <label for="c-23-railway-skeletons-info" class="badge info as-toggle">1 info</label>
+        <label for="c-23-railway-skeletons-stories" class="badge ok as-toggle">7 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/railway/skeletons/skeletons.stories.tsx">railway-skeletons · ./src/components/railway/skeletons/skeletons.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-23-railway-skeletons-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-23-railway-skeletons-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import {
+    FareSkeleton,
+    JourneySkeleton,
+    LiveStatusSkeleton,
+    ScheduleSkeleton,
+    SeatAvailabilitySkeleton,
+    TrainCardSkeleton,
+} from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Journey</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Journey = () =&gt; &lt;JourneySkeleton className=&quot;w-[450px]&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Train Card</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TrainCard = () =&gt; &lt;TrainCardSkeleton className=&quot;w-[450px]&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Live Status</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const LiveStatus = () =&gt; &lt;LiveStatusSkeleton className=&quot;w-[450px]&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Schedule</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Schedule = () =&gt; &lt;ScheduleSkeleton className=&quot;w-[450px]&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Seat Availability</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const SeatAvailability = () =&gt; &lt;SeatAvailabilitySkeleton className=&quot;w-[450px]&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Fare</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Fare = () =&gt; &lt;FareSkeleton className=&quot;w-[400px]&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">All Skeletons</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const AllSkeletons = () =&gt; (
+  &lt;div className=&quot;w-[500px] space-y-4&quot;&gt;
+    &lt;JourneySkeleton /&gt;
+    &lt;TrainCardSkeleton /&gt;
+    &lt;LiveStatusSkeleton /&gt;
+    &lt;ScheduleSkeleton /&gt;
+    &lt;SeatAvailabilitySkeleton /&gt;
+    &lt;FareSkeleton /&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="LoadingOverlay">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> LoadingOverlay</h2>
       <div class="badges">
-        <label for="c-19-feedback-loadingoverlay-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-19-feedback-loadingoverlay-info" class="badge info as-toggle">1 info</label>
-        <label for="c-19-feedback-loadingoverlay-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-24-feedback-loadingoverlay-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-24-feedback-loadingoverlay-info" class="badge info as-toggle">1 info</label>
+        <label for="c-24-feedback-loadingoverlay-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -3110,11 +3959,11 @@ import { Mail, Search } from "lucide-react";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-19-feedback-loadingoverlay-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-19-feedback-loadingoverlay-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-24-feedback-loadingoverlay-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-24-feedback-loadingoverlay-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-19-feedback-loadingoverlay-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-24-feedback-loadingoverlay-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3207,9 +4056,9 @@ visible: boolean</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> MobileNavigation</h2>
       <div class="badges">
-        <label for="c-20-navigation-mobilenavigation-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-20-navigation-mobilenavigation-info" class="badge info as-toggle">1 info</label>
-        <label for="c-20-navigation-mobilenavigation-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-25-navigation-mobilenavigation-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-25-navigation-mobilenavigation-info" class="badge info as-toggle">1 info</label>
+        <label for="c-25-navigation-mobilenavigation-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -3222,11 +4071,11 @@ visible: boolean</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-20-navigation-mobilenavigation-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-20-navigation-mobilenavigation-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-25-navigation-mobilenavigation-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-25-navigation-mobilenavigation-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-20-navigation-mobilenavigation-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-25-navigation-mobilenavigation-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3277,8 +4126,12 @@ import { MobileNavigation } from "railverse-v2";</code></pre>
     items={mockItems}
     drawerContent={(&lt;div className=&quot;space-y-4&quot;&gt;
       &lt;div className=&quot;font-semibold text-sm border-b pb-2 mb-2&quot;&gt;More Options&lt;/div&gt;
-      &lt;a href=&quot;#&quot; className=&quot;block py-2 text-sm text-muted-foreground hover:text-foreground&quot;&gt;Settings&lt;/a&gt;
-      &lt;a href=&quot;#&quot; className=&quot;block py-2 text-sm text-muted-foreground hover:text-foreground&quot;&gt;Help Support&lt;/a&gt;
+      &lt;a href=&quot;#&quot; className=&quot;block py-2 text-sm text-muted-foreground hover:text-foreground&quot;&gt;
+        Settings
+      &lt;/a&gt;
+      &lt;a href=&quot;#&quot; className=&quot;block py-2 text-sm text-muted-foreground hover:text-foreground&quot;&gt;
+        Help Support
+      &lt;/a&gt;
     &lt;/div&gt;)} /&gt;;</code></pre>
             </div>
         </div>
@@ -3298,9 +4151,9 @@ import { MobileNavigation } from "railverse-v2";</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> NavigationBar</h2>
       <div class="badges">
-        <label for="c-21-navigation-navigationbar-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-21-navigation-navigationbar-info" class="badge info as-toggle">1 info</label>
-        <label for="c-21-navigation-navigationbar-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-26-navigation-navigationbar-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-26-navigation-navigationbar-info" class="badge info as-toggle">1 info</label>
+        <label for="c-26-navigation-navigationbar-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -3313,11 +4166,11 @@ import { MobileNavigation } from "railverse-v2";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-21-navigation-navigationbar-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-21-navigation-navigationbar-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-26-navigation-navigationbar-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-26-navigation-navigationbar-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-21-navigation-navigationbar-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-26-navigation-navigationbar-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3388,9 +4241,9 @@ import { NavigationBar } from "railverse-v2";</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> NotificationMenu</h2>
       <div class="badges">
-        <label for="c-22-navigation-notificationmenu-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-22-navigation-notificationmenu-info" class="badge info as-toggle">1 info</label>
-        <label for="c-22-navigation-notificationmenu-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-27-navigation-notificationmenu-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-27-navigation-notificationmenu-info" class="badge info as-toggle">1 info</label>
+        <label for="c-27-navigation-notificationmenu-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -3403,11 +4256,11 @@ import { NavigationBar } from "railverse-v2";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-22-navigation-notificationmenu-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-22-navigation-notificationmenu-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-27-navigation-notificationmenu-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-27-navigation-notificationmenu-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-22-navigation-notificationmenu-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-27-navigation-notificationmenu-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3485,9 +4338,9 @@ count?: number = 0</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> OTPInput</h2>
       <div class="badges">
-        <label for="c-23-forms-otpinput-props" class="badge ok as-toggle">10 prop types</label>
-        <label for="c-23-forms-otpinput-info" class="badge info as-toggle">1 info</label>
-        <label for="c-23-forms-otpinput-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-28-forms-otpinput-props" class="badge ok as-toggle">10 prop types</label>
+        <label for="c-28-forms-otpinput-info" class="badge info as-toggle">1 info</label>
+        <label for="c-28-forms-otpinput-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -3500,11 +4353,11 @@ count?: number = 0</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-23-forms-otpinput-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-23-forms-otpinput-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-28-forms-otpinput-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-28-forms-otpinput-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-23-forms-otpinput-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-28-forms-otpinput-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3636,8 +4489,8 @@ value?: string</code></pre>
       <h2><span class="status-dot dot-ok"></span> PageContainer</h2>
       <div class="badges">
         
-        <label for="c-24-layout-pagecontainer-info" class="badge info as-toggle">1 info</label>
-        <label for="c-24-layout-pagecontainer-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-29-layout-pagecontainer-info" class="badge info as-toggle">1 info</label>
+        <label for="c-29-layout-pagecontainer-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -3650,8 +4503,8 @@ value?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-24-layout-pagecontainer-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-24-layout-pagecontainer-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-29-layout-pagecontainer-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-29-layout-pagecontainer-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -3717,9 +4570,9 @@ value?: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Pagination</h2>
       <div class="badges">
-        <label for="c-25-navigation-pagination-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-25-navigation-pagination-info" class="badge info as-toggle">1 info</label>
-        <label for="c-25-navigation-pagination-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-30-navigation-pagination-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-30-navigation-pagination-info" class="badge info as-toggle">1 info</label>
+        <label for="c-30-navigation-pagination-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -3732,11 +4585,11 @@ value?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-25-navigation-pagination-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-25-navigation-pagination-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-30-navigation-pagination-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-30-navigation-pagination-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-25-navigation-pagination-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-30-navigation-pagination-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3805,9 +4658,9 @@ totalPages: number</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ProfileMenu</h2>
       <div class="badges">
-        <label for="c-26-navigation-profilemenu-props" class="badge ok as-toggle">5 prop types</label>
-        <label for="c-26-navigation-profilemenu-info" class="badge info as-toggle">1 info</label>
-        <label for="c-26-navigation-profilemenu-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-31-navigation-profilemenu-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-31-navigation-profilemenu-info" class="badge info as-toggle">1 info</label>
+        <label for="c-31-navigation-profilemenu-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -3820,11 +4673,11 @@ totalPages: number</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-26-navigation-profilemenu-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-26-navigation-profilemenu-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-31-navigation-profilemenu-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-31-navigation-profilemenu-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-26-navigation-profilemenu-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-31-navigation-profilemenu-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3901,9 +4754,9 @@ import { ProfileMenu } from "railverse-v2";</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Progress</h2>
       <div class="badges">
-        <label for="c-27-feedback-progress-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-27-feedback-progress-info" class="badge info as-toggle">1 info</label>
-        <label for="c-27-feedback-progress-stories" class="badge ok as-toggle">7 stories</label>
+        <label for="c-32-feedback-progress-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-32-feedback-progress-info" class="badge info as-toggle">1 info</label>
+        <label for="c-32-feedback-progress-stories" class="badge ok as-toggle">7 stories</label>
         
         
       </div>
@@ -3916,11 +4769,11 @@ import { ProfileMenu } from "railverse-v2";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-27-feedback-progress-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-27-feedback-progress-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-32-feedback-progress-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-32-feedback-progress-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-27-feedback-progress-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-32-feedback-progress-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -4062,9 +4915,9 @@ variant?: &quot;linear&quot; | &quot;circular&quot; = &quot;linear&quot;</code><
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> RadioGroup</h2>
       <div class="badges">
-        <label for="c-28-forms-radiogroup-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-28-forms-radiogroup-info" class="badge info as-toggle">1 info</label>
-        <label for="c-28-forms-radiogroup-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-33-forms-radiogroup-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-33-forms-radiogroup-info" class="badge info as-toggle">1 info</label>
+        <label for="c-33-forms-radiogroup-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -4077,11 +4930,11 @@ variant?: &quot;linear&quot; | &quot;circular&quot; = &quot;linear&quot;</code><
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-28-forms-radiogroup-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-28-forms-radiogroup-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-33-forms-radiogroup-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-33-forms-radiogroup-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-28-forms-radiogroup-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-33-forms-radiogroup-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -4235,14 +5088,451 @@ orientation?: any = &quot;vertical&quot;</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="RailwayEmptyState">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> RailwayEmptyState</h2>
+      <div class="badges">
+        <label for="c-34-railway-emptystates-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-34-railway-emptystates-info" class="badge info as-toggle">1 info</label>
+        <label for="c-34-railway-emptystates-stories" class="badge ok as-toggle">8 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/railway/empty-states/empty-states.stories.tsx">railway-emptystates · ./src/components/railway/empty-states/empty-states.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-34-railway-emptystates-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-34-railway-emptystates-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-34-railway-emptystates-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">5 prop types</span>
+            </div>
+            <pre><code>Component: src\components\railway\empty-states\railway-empty-state.tsx::RailwayEmptyState</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>children?: React.ReactNode
+
+description?: string
+
+icon?: React.ReactNode
+
+preset?: | &quot;no-journey&quot;
+| &quot;no-live-status&quot;
+| &quot;no-seat-data&quot;
+| &quot;no-fare-data&quot;
+| &quot;no-search-results&quot;
+| &quot;no-recent-searches&quot;
+
+title?: string</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { RailwayEmptyState } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">No Journey</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const NoJourney = () =&gt; &lt;RailwayEmptyState preset=&quot;no-journey&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">No Live Status</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const NoLiveStatus = () =&gt; &lt;RailwayEmptyState preset=&quot;no-live-status&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">No Seat Data</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const NoSeatData = () =&gt; &lt;RailwayEmptyState preset=&quot;no-seat-data&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">No Fare Data</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const NoFareData = () =&gt; &lt;RailwayEmptyState preset=&quot;no-fare-data&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">No Search Results</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const NoSearchResults = () =&gt; &lt;RailwayEmptyState preset=&quot;no-search-results&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">No Recent Searches</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const NoRecentSearches = () =&gt; &lt;RailwayEmptyState preset=&quot;no-recent-searches&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">With Action Button</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithActionButton = () =&gt; &lt;RailwayEmptyState preset=&quot;no-live-status&quot;&gt;(&lt;button className=&quot;px-4 py-2 text-xs bg-primary text-primary-foreground rounded-lg font-bold&quot;&gt;Refresh
+            &lt;/button&gt;)&lt;/RailwayEmptyState&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Custom Content</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const CustomContent = () =&gt; &lt;RailwayEmptyState
+    title=&quot;Route Unavailable&quot;
+    description=&quot;This route is temporarily suspended. Please check alternative connections.&quot;&gt;(&lt;button className=&quot;px-4 py-2 text-xs border rounded-lg font-semibold&quot;&gt;View Alternatives
+            &lt;/button&gt;)&lt;/RailwayEmptyState&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="RecentSearchCard">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> RecentSearchCard</h2>
+      <div class="badges">
+        <label for="c-35-railway-search-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-35-railway-search-info" class="badge info as-toggle">1 info</label>
+        <label for="c-35-railway-search-stories" class="badge ok as-toggle">4 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/railway/search/search.stories.tsx">railway-search · ./src/components/railway/search/search.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-35-railway-search-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-35-railway-search-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-35-railway-search-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">2 prop types</span>
+            </div>
+            <pre><code>Component: src\components\railway\search\recent-search-card.tsx::RecentSearchCard</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>children?: React.ReactNode
+
+title?: string = &quot;Recent Searches&quot;</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import {
+    FavoriteRouteCard,
+    PopularRouteCard,
+    RecentSearchCard,
+    SearchHistoryItem,
+    SearchSuggestion,
+} from "railverse-v2";
+import { MapPin } from "lucide-react";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Recent Search Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const RecentSearchDemo = () =&gt; (
+  &lt;RecentSearchCard className=&quot;w-[360px]&quot;&gt;
+    &lt;SearchHistoryItem query=&quot;NDLS → MMCT&quot; timestamp=&quot;Today&quot; onClear={() =&gt; {}} /&gt;
+    &lt;SearchHistoryItem query=&quot;HWH → NDLS&quot; timestamp=&quot;Yesterday&quot; onClear={() =&gt; {}} /&gt;
+    &lt;SearchHistoryItem query=&quot;BSB → PUNE&quot; timestamp=&quot;2 days ago&quot; onClear={() =&gt; {}} /&gt;
+  &lt;/RecentSearchCard&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Suggestions Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const SuggestionsDemo = () =&gt; (
+  &lt;div className=&quot;w-[360px] border border-border rounded-xl bg-card p-2 space-y-1&quot;&gt;
+    &lt;SearchSuggestion title=&quot;New Delhi (NDLS)&quot; subtitle=&quot;Delhi • Northern Railway&quot; icon={&lt;MapPin className=&quot;h-4 w-4 text-primary&quot; /&gt;} /&gt;
+    &lt;SearchSuggestion title=&quot;New Delhi Jn (NDJ)&quot; subtitle=&quot;Delhi • Northern Railway&quot; /&gt;
+    &lt;SearchSuggestion title=&quot;Nizamuddin (NZM)&quot; subtitle=&quot;Delhi • Northern Railway&quot; /&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Favorite Routes Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const FavoriteRoutesDemo = () =&gt; (
+  &lt;div className=&quot;w-[360px] space-y-3&quot;&gt;
+    &lt;FavoriteRouteCard from=&quot;New Delhi&quot; to=&quot;Mumbai Central&quot; trainCount={12} /&gt;
+    &lt;FavoriteRouteCard from=&quot;Howrah Jn&quot; to=&quot;Bengaluru&quot; trainCount={8} /&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Popular Routes Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const PopularRoutesDemo = () =&gt; (
+  &lt;div className=&quot;w-[360px] grid grid-cols-2 gap-3&quot;&gt;
+    &lt;PopularRouteCard from=&quot;NDLS&quot; to=&quot;MMCT&quot; trafficVolume=&quot;12K&quot; /&gt;
+    &lt;PopularRouteCard from=&quot;HWH&quot; to=&quot;NDLS&quot; trafficVolume=&quot;9K&quot; /&gt;
+    &lt;PopularRouteCard from=&quot;PUNE&quot; to=&quot;BSB&quot; trafficVolume=&quot;7K&quot; /&gt;
+    &lt;PopularRouteCard from=&quot;MAS&quot; to=&quot;SBC&quot; trafficVolume=&quot;6K&quot; /&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="RouteChip">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> RouteChip</h2>
+      <div class="badges">
+        <label for="c-36-railway-route-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-36-railway-route-info" class="badge info as-toggle">1 info</label>
+        <label for="c-36-railway-route-stories" class="badge ok as-toggle">4 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/railway/route/route.stories.tsx">railway-route · ./src/components/railway/route/route.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-36-railway-route-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-36-railway-route-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-36-railway-route-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">2 prop types</span>
+            </div>
+            <pre><code>Component: src\components\railway\route\route-chip.tsx::RouteChip</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>from: string
+
+to: string</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { DistanceIndicator, HaltIndicator, RouteChip, RouteTimeline, ScheduleRow } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default Chip</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const DefaultChip = () =&gt; &lt;RouteChip from=&quot;NDLS&quot; to=&quot;MMCT&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Chips And Halt Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const ChipsAndHaltDemo = () =&gt; (
+  &lt;div className=&quot;flex gap-3 items-center&quot;&gt;
+    &lt;RouteChip from=&quot;NDLS&quot; to=&quot;HWH&quot; /&gt;
+    &lt;DistanceIndicator distanceKm={1450} /&gt;
+    &lt;HaltIndicator minutes={10} /&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Schedule Row Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const ScheduleRowDemo = () =&gt; (
+  &lt;div className=&quot;w-[450px] border rounded-xl overflow-hidden bg-card&quot;&gt;
+    &lt;ScheduleRow stationCode=&quot;NDLS&quot; stationName=&quot;New Delhi&quot; arrivalTime=&quot;Start&quot; departureTime=&quot;16:55&quot; distanceKm={0} /&gt;
+    &lt;ScheduleRow stationCode=&quot;KOTA&quot; stationName=&quot;Kota Jn&quot; arrivalTime=&quot;22:10&quot; departureTime=&quot;22:20&quot; haltMinutes={10} distanceKm={465} /&gt;
+    &lt;ScheduleRow stationCode=&quot;RTM&quot; stationName=&quot;Ratlam Jn&quot; arrivalTime=&quot;01:55&quot; departureTime=&quot;02:00&quot; haltMinutes={5} distanceKm={731} /&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Timeline Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TimelineDemo = () =&gt; (
+  &lt;div className=&quot;w-[300px]&quot;&gt;
+    &lt;RouteTimeline
+      stops={[
+        { stationCode: &quot;NDLS&quot;, stationName: &quot;New Delhi&quot;, arrivalTime: &quot;Start&quot;, departureTime: &quot;16:55&quot;, distanceKm: 0 },
+        { stationCode: &quot;KOTA&quot;, stationName: &quot;Kota Jn&quot;, arrivalTime: &quot;22:10&quot;, departureTime: &quot;22:20&quot;, distanceKm: 465 },
+        { stationCode: &quot;MMCT&quot;, stationName: &quot;Mumbai Central&quot;, arrivalTime: &quot;08:35&quot;, departureTime: &quot;End&quot;, distanceKm: 1386 },
+      ]}
+    /&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="ScrollArea">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ScrollArea</h2>
       <div class="badges">
-        <label for="c-29-layout-scrollarea-props" class="badge ok as-toggle">1 prop type</label>
-        <label for="c-29-layout-scrollarea-info" class="badge info as-toggle">1 info</label>
-        <label for="c-29-layout-scrollarea-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-37-layout-scrollarea-props" class="badge ok as-toggle">1 prop type</label>
+        <label for="c-37-layout-scrollarea-info" class="badge info as-toggle">1 info</label>
+        <label for="c-37-layout-scrollarea-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -4255,11 +5545,11 @@ orientation?: any = &quot;vertical&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-29-layout-scrollarea-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-29-layout-scrollarea-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-37-layout-scrollarea-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-37-layout-scrollarea-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-29-layout-scrollarea-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-37-layout-scrollarea-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -4309,7 +5599,8 @@ orientation?: any = &quot;vertical&quot;</code></pre>
       &lt;h4 className=&quot;text-sm font-semibold leading-none&quot;&gt;IRCTC Booking Guidelines&lt;/h4&gt;
       {Array.from({ length: 10 }).map((_, i) =&gt; (
         &lt;p key={i} className=&quot;text-xs text-muted-foreground leading-normal&quot;&gt;
-          Passenger booking details for ticket reservation under premium quota. Ensure that details match valid ID proofs.
+          Passenger booking details for ticket reservation under premium quota. Ensure that
+          details match valid ID proofs.
         &lt;/p&gt;
       ))}
     &lt;/div&gt;
@@ -4324,10 +5615,16 @@ orientation?: any = &quot;vertical&quot;</code></pre>
               
               
               <pre><code>const Horizontal = () =&gt; (
-  &lt;ScrollArea orientation=&quot;horizontal&quot; className=&quot;w-[300px] rounded-md border border-border p-4 whitespace-nowrap&quot;&gt;
+  &lt;ScrollArea
+    orientation=&quot;horizontal&quot;
+    className=&quot;w-[300px] rounded-md border border-border p-4 whitespace-nowrap&quot;
+  &gt;
     &lt;div className=&quot;flex gap-4 p-1&quot;&gt;
       {Array.from({ length: 10 }).map((_, i) =&gt; (
-        &lt;div key={i} className=&quot;h-16 w-24 shrink-0 rounded bg-accent flex items-center justify-center text-xs font-semibold&quot;&gt;
+        &lt;div
+          key={i}
+          className=&quot;h-16 w-24 shrink-0 rounded bg-accent flex items-center justify-center text-xs font-semibold&quot;
+        &gt;
           Station {i + 1}
         &lt;/div&gt;
       ))}
@@ -4352,9 +5649,9 @@ orientation?: any = &quot;vertical&quot;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> SearchOverlay</h2>
       <div class="badges">
-        <label for="c-30-navigation-searchoverlay-props" class="badge ok as-toggle">7 prop types</label>
-        <label for="c-30-navigation-searchoverlay-info" class="badge info as-toggle">1 info</label>
-        <label for="c-30-navigation-searchoverlay-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-38-navigation-searchoverlay-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-38-navigation-searchoverlay-info" class="badge info as-toggle">1 info</label>
+        <label for="c-38-navigation-searchoverlay-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -4367,11 +5664,11 @@ orientation?: any = &quot;vertical&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-30-navigation-searchoverlay-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-30-navigation-searchoverlay-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-38-navigation-searchoverlay-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-38-navigation-searchoverlay-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-30-navigation-searchoverlay-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-38-navigation-searchoverlay-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -4436,9 +5733,15 @@ resultsSlot?: React.ReactNode</code></pre>
       className=&quot;w-full bg-transparent border-0 outline-none text-sm placeholder:text-muted-foreground&quot;
     /&gt;)}
     filtersSlot={(&lt;div className=&quot;flex gap-2&quot;&gt;
-      &lt;span className=&quot;text-xs border px-2 py-0.5 rounded-full bg-background cursor-pointer hover:bg-accent&quot;&gt;All&lt;/span&gt;
-      &lt;span className=&quot;text-xs border px-2 py-0.5 rounded-full bg-background cursor-pointer hover:bg-accent&quot;&gt;Trains&lt;/span&gt;
-      &lt;span className=&quot;text-xs border px-2 py-0.5 rounded-full bg-background cursor-pointer hover:bg-accent&quot;&gt;Stations&lt;/span&gt;
+      &lt;span className=&quot;text-xs border px-2 py-0.5 rounded-full bg-background cursor-pointer hover:bg-accent&quot;&gt;
+        All
+      &lt;/span&gt;
+      &lt;span className=&quot;text-xs border px-2 py-0.5 rounded-full bg-background cursor-pointer hover:bg-accent&quot;&gt;
+        Trains
+      &lt;/span&gt;
+      &lt;span className=&quot;text-xs border px-2 py-0.5 rounded-full bg-background cursor-pointer hover:bg-accent&quot;&gt;
+        Stations
+      &lt;/span&gt;
     &lt;/div&gt;)}
     resultsSlot={(&lt;div className=&quot;p-4 text-center text-sm text-muted-foreground&quot;&gt;Type something to search...
             &lt;/div&gt;)}
@@ -4465,8 +5768,8 @@ resultsSlot?: React.ReactNode</code></pre>
       <h2><span class="status-dot dot-ok"></span> Section</h2>
       <div class="badges">
         
-        <label for="c-31-layout-section-info" class="badge info as-toggle">1 info</label>
-        <label for="c-31-layout-section-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-39-layout-section-info" class="badge info as-toggle">1 info</label>
+        <label for="c-39-layout-section-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -4479,8 +5782,8 @@ resultsSlot?: React.ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-31-layout-section-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-31-layout-section-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-39-layout-section-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-39-layout-section-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -4546,9 +5849,9 @@ resultsSlot?: React.ReactNode</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Select</h2>
       <div class="badges">
-        <label for="c-32-forms-select-props" class="badge ok as-toggle">8 prop types</label>
-        <label for="c-32-forms-select-info" class="badge info as-toggle">1 info</label>
-        <label for="c-32-forms-select-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-40-forms-select-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-40-forms-select-info" class="badge info as-toggle">1 info</label>
+        <label for="c-40-forms-select-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -4561,11 +5864,11 @@ resultsSlot?: React.ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-32-forms-select-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-32-forms-select-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-40-forms-select-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-40-forms-select-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-32-forms-select-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-40-forms-select-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -4694,9 +5997,9 @@ placeholder?: string = &quot;Select option&quot;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Sidebar</h2>
       <div class="badges">
-        <label for="c-33-navigation-sidebar-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-33-navigation-sidebar-info" class="badge info as-toggle">1 info</label>
-        <label for="c-33-navigation-sidebar-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-41-navigation-sidebar-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-41-navigation-sidebar-info" class="badge info as-toggle">1 info</label>
+        <label for="c-41-navigation-sidebar-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -4709,11 +6012,11 @@ placeholder?: string = &quot;Select option&quot;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-33-navigation-sidebar-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-33-navigation-sidebar-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-41-navigation-sidebar-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-41-navigation-sidebar-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-33-navigation-sidebar-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-41-navigation-sidebar-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -4806,8 +6109,8 @@ import { Sidebar } from "railverse-v2";</code></pre>
       <h2><span class="status-dot dot-ok"></span> Skeleton</h2>
       <div class="badges">
         
-        <label for="c-34-feedback-skeleton-info" class="badge info as-toggle">1 info</label>
-        <label for="c-34-feedback-skeleton-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-42-feedback-skeleton-info" class="badge info as-toggle">1 info</label>
+        <label for="c-42-feedback-skeleton-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -4820,8 +6123,8 @@ import { Sidebar } from "railverse-v2";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-34-feedback-skeleton-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-34-feedback-skeleton-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-42-feedback-skeleton-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-42-feedback-skeleton-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -4955,9 +6258,9 @@ import { Sidebar } from "railverse-v2";</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Slider</h2>
       <div class="badges">
-        <label for="c-35-forms-slider-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-35-forms-slider-info" class="badge info as-toggle">1 info</label>
-        <label for="c-35-forms-slider-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-43-forms-slider-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-43-forms-slider-info" class="badge info as-toggle">1 info</label>
+        <label for="c-43-forms-slider-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -4970,11 +6273,11 @@ import { Sidebar } from "railverse-v2";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-35-forms-slider-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-35-forms-slider-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-43-forms-slider-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-43-forms-slider-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-35-forms-slider-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-43-forms-slider-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5112,8 +6415,8 @@ step?: any = 1</code></pre>
       <h2><span class="status-dot dot-ok"></span> Spinner</h2>
       <div class="badges">
         
-        <label for="c-36-feedback-spinner-info" class="badge info as-toggle">1 info</label>
-        <label for="c-36-feedback-spinner-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-44-feedback-spinner-info" class="badge info as-toggle">1 info</label>
+        <label for="c-44-feedback-spinner-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -5126,8 +6429,8 @@ step?: any = 1</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-36-feedback-spinner-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-36-feedback-spinner-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-44-feedback-spinner-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-44-feedback-spinner-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -5221,9 +6524,9 @@ step?: any = 1</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> SplitView</h2>
       <div class="badges">
-        <label for="c-37-layout-splitview-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-37-layout-splitview-info" class="badge info as-toggle">1 info</label>
-        <label for="c-37-layout-splitview-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-45-layout-splitview-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-45-layout-splitview-info" class="badge info as-toggle">1 info</label>
+        <label for="c-45-layout-splitview-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -5236,11 +6539,11 @@ step?: any = 1</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-37-layout-splitview-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-37-layout-splitview-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-45-layout-splitview-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-45-layout-splitview-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-37-layout-splitview-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-45-layout-splitview-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5327,8 +6630,8 @@ right: React.ReactNode</code></pre>
       <h2><span class="status-dot dot-ok"></span> Stack</h2>
       <div class="badges">
         
-        <label for="c-38-layout-stack-info" class="badge info as-toggle">1 info</label>
-        <label for="c-38-layout-stack-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-46-layout-stack-info" class="badge info as-toggle">1 info</label>
+        <label for="c-46-layout-stack-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -5341,8 +6644,8 @@ right: React.ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-38-layout-stack-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-38-layout-stack-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-46-layout-stack-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-46-layout-stack-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -5392,10 +6695,145 @@ right: React.ReactNode</code></pre>
               
               
               <pre><code>const Centered = () =&gt; &lt;Stack gap=&quot;lg&quot; align=&quot;center&quot;&gt;(&lt;&gt;
-      &lt;div className=&quot;bg-primary text-primary-foreground p-3 rounded w-32 text-center&quot;&gt;Item 1&lt;/div&gt;
-      &lt;div className=&quot;bg-primary text-primary-foreground p-3 rounded w-32 text-center&quot;&gt;Item 2&lt;/div&gt;
-      &lt;div className=&quot;bg-primary text-primary-foreground p-3 rounded w-32 text-center&quot;&gt;Item 3&lt;/div&gt;
+      &lt;div className=&quot;bg-primary text-primary-foreground p-3 rounded w-32 text-center&quot;&gt;
+        Item 1
+      &lt;/div&gt;
+      &lt;div className=&quot;bg-primary text-primary-foreground p-3 rounded w-32 text-center&quot;&gt;
+        Item 2
+      &lt;/div&gt;
+      &lt;div className=&quot;bg-primary text-primary-foreground p-3 rounded w-32 text-center&quot;&gt;
+        Item 3
+      &lt;/div&gt;
     &lt;/&gt;)&lt;/Stack&gt;;</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="StationCard">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> StationCard</h2>
+      <div class="badges">
+        <label for="c-47-railway-station-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-47-railway-station-info" class="badge info as-toggle">1 info</label>
+        <label for="c-47-railway-station-stories" class="badge ok as-toggle">2 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/railway/station/station.stories.tsx">railway-station · ./src/components/railway/station/station.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-47-railway-station-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-47-railway-station-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-47-railway-station-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">4 prop types</span>
+            </div>
+            <pre><code>Component: src\components\railway\station\station-card.tsx::StationCard</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>actionsSlot?: React.ReactNode
+
+headerSlot?: React.ReactNode
+
+metaSlot?: React.ReactNode
+
+timelineSlot?: React.ReactNode</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { StationBadge, StationCard, StationInfoRow, StationMeta, StationTimeline } from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default Card</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const DefaultCard = () =&gt; (
+  &lt;StationCard
+    className=&quot;w-[450px]&quot;
+    headerSlot={
+      &lt;div className=&quot;flex items-center gap-2&quot;&gt;
+        &lt;StationBadge code=&quot;NDLS&quot; /&gt;
+        &lt;span className=&quot;font-bold text-sm&quot;&gt;New Delhi Railway Station&lt;/span&gt;
+      &lt;/div&gt;
+    }
+    timelineSlot={
+      &lt;StationTimeline
+        items={[
+          { trainNumber: &quot;12952&quot;, trainName: &quot;Mumbai Rajdhani&quot;, time: &quot;16:55&quot;, platform: &quot;3&quot;, delayStatus: &quot;onTime&quot; },
+          { trainNumber: &quot;12002&quot;, trainName: &quot;Bhopal Shatabdi&quot;, time: &quot;06:00&quot;, platform: &quot;1&quot;, delayStatus: &quot;delayed&quot;, delayLabel: &quot;15m delay&quot; },
+        ]}
+      /&gt;
+    }
+    metaSlot={
+      &lt;StationMeta
+        items={[
+          { label: &quot;Zone&quot;, value: &quot;NR&quot; },
+          { label: &quot;State&quot;, value: &quot;Delhi&quot; },
+          { label: &quot;Platforms&quot;, value: &quot;16&quot; },
+        ]}
+      /&gt;
+    }
+  /&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Info Row Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const InfoRowDemo = () =&gt; (
+  &lt;div className=&quot;w-[400px] space-y-1&quot;&gt;
+    &lt;StationInfoRow stationBadge={&lt;StationBadge code=&quot;MMCT&quot; /&gt;} name=&quot;Mumbai Central&quot; metaDetails=&quot;Zone: WR&quot; /&gt;
+    &lt;StationInfoRow stationBadge={&lt;StationBadge code=&quot;HWH&quot; /&gt;} name=&quot;Howrah Jn&quot; metaDetails=&quot;Zone: ER&quot; /&gt;
+  &lt;/div&gt;
+);</code></pre>
             </div>
         </div>
     
@@ -5414,9 +6852,9 @@ right: React.ReactNode</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> StickyRegion</h2>
       <div class="badges">
-        <label for="c-39-layout-stickyregion-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-39-layout-stickyregion-info" class="badge info as-toggle">1 info</label>
-        <label for="c-39-layout-stickyregion-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-48-layout-stickyregion-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-48-layout-stickyregion-info" class="badge info as-toggle">1 info</label>
+        <label for="c-48-layout-stickyregion-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -5429,11 +6867,11 @@ right: React.ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-39-layout-stickyregion-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-39-layout-stickyregion-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-48-layout-stickyregion-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-48-layout-stickyregion-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-39-layout-stickyregion-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-48-layout-stickyregion-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5510,9 +6948,9 @@ zIndex?: number = 30</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Switch</h2>
       <div class="badges">
-        <label for="c-40-forms-switch-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-40-forms-switch-info" class="badge info as-toggle">1 info</label>
-        <label for="c-40-forms-switch-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-49-forms-switch-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-49-forms-switch-info" class="badge info as-toggle">1 info</label>
+        <label for="c-49-forms-switch-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -5525,11 +6963,11 @@ zIndex?: number = 30</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-40-forms-switch-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-40-forms-switch-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-49-forms-switch-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-49-forms-switch-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-40-forms-switch-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-49-forms-switch-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5639,9 +7077,9 @@ label?: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Tabs</h2>
       <div class="badges">
-        <label for="c-41-navigation-tabs-props" class="badge ok as-toggle">5 prop types</label>
-        <label for="c-41-navigation-tabs-info" class="badge info as-toggle">1 info</label>
-        <label for="c-41-navigation-tabs-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-50-navigation-tabs-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-50-navigation-tabs-info" class="badge info as-toggle">1 info</label>
+        <label for="c-50-navigation-tabs-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -5654,11 +7092,11 @@ label?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-41-navigation-tabs-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-41-navigation-tabs-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-50-navigation-tabs-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-50-navigation-tabs-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-41-navigation-tabs-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-50-navigation-tabs-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5730,9 +7168,9 @@ import { Tabs } from "railverse-v2";</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Textarea</h2>
       <div class="badges">
-        <label for="c-42-foundations-textarea-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-42-foundations-textarea-info" class="badge info as-toggle">1 info</label>
-        <label for="c-42-foundations-textarea-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-51-foundations-textarea-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-51-foundations-textarea-info" class="badge info as-toggle">1 info</label>
+        <label for="c-51-foundations-textarea-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -5745,11 +7183,11 @@ import { Tabs } from "railverse-v2";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-42-foundations-textarea-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-42-foundations-textarea-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-51-foundations-textarea-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-51-foundations-textarea-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-42-foundations-textarea-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-51-foundations-textarea-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5838,9 +7276,9 @@ helperText?: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ThemeSwitcher</h2>
       <div class="badges">
-        <label for="c-43-navigation-themeswitcher-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-43-navigation-themeswitcher-info" class="badge info as-toggle">1 info</label>
-        <label for="c-43-navigation-themeswitcher-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-52-navigation-themeswitcher-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-52-navigation-themeswitcher-info" class="badge info as-toggle">1 info</label>
+        <label for="c-52-navigation-themeswitcher-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -5853,11 +7291,11 @@ helperText?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-43-navigation-themeswitcher-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-43-navigation-themeswitcher-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-52-navigation-themeswitcher-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-52-navigation-themeswitcher-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-43-navigation-themeswitcher-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-52-navigation-themeswitcher-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5924,8 +7362,8 @@ import { ThemeSwitcher } from "railverse-v2";</code></pre>
       <h2><span class="status-dot dot-ok"></span> ThemeToggle</h2>
       <div class="badges">
         
-        <label for="c-44-navigation-themetoggle-info" class="badge info as-toggle">1 info</label>
-        <label for="c-44-navigation-themetoggle-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-53-navigation-themetoggle-info" class="badge info as-toggle">1 info</label>
+        <label for="c-53-navigation-themetoggle-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -5938,8 +7376,8 @@ import { ThemeSwitcher } from "railverse-v2";</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-44-navigation-themetoggle-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-44-navigation-themetoggle-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-53-navigation-themetoggle-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-53-navigation-themetoggle-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -5995,9 +7433,9 @@ import { ThemeToggle } from "railverse-v2";</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-err"></span> ToastDemo</h2>
       <div class="badges">
-        <label for="c-45-feedback-toast-err" class="badge err as-toggle">prop type error</label>
-        <label for="c-45-feedback-toast-info" class="badge info as-toggle">1 info</label>
-        <label for="c-45-feedback-toast-stories" class="badge err as-toggle">1/2 story errors</label>
+        <label for="c-54-feedback-toast-err" class="badge err as-toggle">prop type error</label>
+        <label for="c-54-feedback-toast-info" class="badge info as-toggle">1 info</label>
+        <label for="c-54-feedback-toast-stories" class="badge err as-toggle">1/2 story errors</label>
         
         
       </div>
@@ -6009,9 +7447,9 @@ import { ThemeToggle } from "railverse-v2";</code></pre>
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-45-feedback-toast-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-45-feedback-toast-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-45-feedback-toast-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-54-feedback-toast-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-54-feedback-toast-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-54-feedback-toast-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -6171,6 +7609,179 @@ export const RTLCheck: Story = {
 </article>
 <article
   class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="TrainCard">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> TrainCard</h2>
+      <div class="badges">
+        <label for="c-55-railway-train-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-55-railway-train-info" class="badge info as-toggle">1 info</label>
+        <label for="c-55-railway-train-stories" class="badge ok as-toggle">3 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/railway/train/train.stories.tsx">railway-train · ./src/components/railway/train/train.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-55-railway-train-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-55-railway-train-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-55-railway-train-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">4 prop types</span>
+            </div>
+            <pre><code>Component: src\components\railway\train\train-card.tsx::TrainCard</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>actionsSlot?: React.ReactNode
+
+headerSlot?: React.ReactNode
+
+metaSlot?: React.ReactNode
+
+routeSlot?: React.ReactNode</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import {
+    TrainCard,
+    TrainHero,
+    TrainInfoRow,
+    TrainMeta,
+    TrainNumberBadge,
+    TrainStatCard,
+    TrainStatusBadge,
+    TrainTypeBadge,
+} from "railverse-v2";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default Card</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const DefaultCard = () =&gt; (
+  &lt;TrainCard
+    className=&quot;w-[450px]&quot;
+    headerSlot={
+      &lt;div className=&quot;flex items-center gap-2&quot;&gt;
+        &lt;TrainNumberBadge number=&quot;12951&quot; /&gt;
+        &lt;span className=&quot;font-bold text-sm&quot;&gt;Mumbai Rajdhani&lt;/span&gt;
+        &lt;TrainTypeBadge type=&quot;rajdhani&quot; /&gt;
+      &lt;/div&gt;
+    }
+    routeSlot={
+      &lt;div className=&quot;text-xs text-muted-foreground font-semibold flex justify-between&quot;&gt;
+        &lt;span&gt;NDLS (16:55)&lt;/span&gt;
+        &lt;span&gt;➜&lt;/span&gt;
+        &lt;span&gt;MMCT (08:35)&lt;/span&gt;
+      &lt;/div&gt;
+    }
+    metaSlot={
+      &lt;TrainMeta
+        items={[
+          { label: &quot;Runs On&quot;, value: &quot;Daily&quot; },
+          { label: &quot;Classes&quot;, value: &quot;1A, 2A, 3A&quot; },
+        ]}
+      /&gt;
+    }
+    actionsSlot={&lt;TrainStatusBadge status=&quot;onTime&quot; /&gt;}
+  /&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Hero Banner</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const HeroBanner = () =&gt; (
+  &lt;TrainHero
+    className=&quot;w-[600px]&quot;
+    numberBadge={&lt;TrainNumberBadge number=&quot;22436&quot; /&gt;}
+    typeBadge={&lt;TrainTypeBadge type=&quot;vandeBharat&quot; /&gt;}
+    name=&quot;New Delhi - Varanasi Vande Bharat Express&quot;
+    routeSummary=&quot;New Delhi (NDLS) to Varanasi Jn (BSB) • 755 km • 8h 0m&quot;
+    statsSlot={
+      &lt;&gt;
+        &lt;TrainStatCard title=&quot;Punctuality&quot; value=&quot;98%&quot; description=&quot;On-time arrivals&quot; /&gt;
+        &lt;TrainStatCard title=&quot;Avg Delay&quot; value=&quot;5m&quot; description=&quot;Very clean record&quot; /&gt;
+        &lt;TrainStatCard title=&quot;Clean Index&quot; value=&quot;4.9/5&quot; description=&quot;Top rated hygiene&quot; /&gt;
+        &lt;TrainStatCard title=&quot;Frequency&quot; value=&quot;6 days/wk&quot; description=&quot;Except Wednesday&quot; /&gt;
+      &lt;/&gt;
+    }
+  /&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Info Row Demo</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const InfoRowDemo = () =&gt; (
+  &lt;div className=&quot;w-[450px] space-y-2&quot;&gt;
+    &lt;TrainInfoRow
+      numberBadge={&lt;TrainNumberBadge number=&quot;12002&quot; /&gt;}
+      name=&quot;Bhopal Shatabdi&quot;
+      typeBadge={&lt;TrainTypeBadge type=&quot;shatabdi&quot; /&gt;}
+      schedule=&quot;NDLS ➜ RKMP • 06:00&quot;
+    /&gt;
+    &lt;TrainInfoRow
+      numberBadge={&lt;TrainNumberBadge number=&quot;12260&quot; /&gt;}
+      name=&quot;Howrah Duronto&quot;
+      typeBadge={&lt;TrainTypeBadge type=&quot;duronto&quot; /&gt;}
+      schedule=&quot;NDLS ➜ HWH • 12:20&quot;
+    /&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  class="card 
   has-error 
   has-info 
   no-story-error
@@ -6181,9 +7792,9 @@ export const RTLCheck: Story = {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Typography</h2>
       <div class="badges">
-        <label for="c-46-foundations-typography-err" class="badge err as-toggle">prop type error</label>
-        <label for="c-46-foundations-typography-info" class="badge info as-toggle">1 info</label>
-        <label for="c-46-foundations-typography-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-56-foundations-typography-err" class="badge err as-toggle">prop type error</label>
+        <label for="c-56-foundations-typography-info" class="badge info as-toggle">1 info</label>
+        <label for="c-56-foundations-typography-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -6195,9 +7806,9 @@ export const RTLCheck: Story = {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-46-foundations-typography-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-46-foundations-typography-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-46-foundations-typography-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-56-foundations-typography-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-56-foundations-typography-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-56-foundations-typography-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -6408,9 +8019,9 @@ export const AllScales: StoryObj = {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> UserMenu</h2>
       <div class="badges">
-        <label for="c-47-navigation-usermenu-props" class="badge ok as-toggle">5 prop types</label>
-        <label for="c-47-navigation-usermenu-info" class="badge info as-toggle">1 info</label>
-        <label for="c-47-navigation-usermenu-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-57-navigation-usermenu-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-57-navigation-usermenu-info" class="badge info as-toggle">1 info</label>
+        <label for="c-57-navigation-usermenu-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -6423,11 +8034,11 @@ export const AllScales: StoryObj = {
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-47-navigation-usermenu-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-47-navigation-usermenu-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-57-navigation-usermenu-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-57-navigation-usermenu-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-47-navigation-usermenu-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-57-navigation-usermenu-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -6496,9 +8107,7 @@ import { UserMenu } from "railverse-v2";</code></pre>
         ],
       },
       {
-        items: [
-          { label: &quot;Log Out&quot;, icon: &lt;LogOut className=&quot;h-4 w-4&quot; /&gt;, danger: true },
-        ],
+        items: [{ label: &quot;Log Out&quot;, icon: &lt;LogOut className=&quot;h-4 w-4&quot; /&gt;, danger: true }],
       },
     ]} /&gt;;</code></pre>
             </div>

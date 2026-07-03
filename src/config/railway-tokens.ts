@@ -1,0 +1,105 @@
+export const RAILWAY_TOKENS = {
+  // Train types colors mapping
+  trainTypes: {
+    rajdhani: {
+      bg: "bg-red-500/10 dark:bg-red-500/20",
+      text: "text-red-600 dark:text-red-400",
+      border: "border-red-500/20 dark:border-red-500/30",
+      label: "Rajdhani Express",
+    },
+    shatabdi: {
+      bg: "bg-blue-500/10 dark:bg-blue-500/20",
+      text: "text-blue-600 dark:text-blue-400",
+      border: "border-blue-500/20 dark:border-blue-500/30",
+      label: "Shatabdi Express",
+    },
+    duronto: {
+      bg: "bg-amber-500/10 dark:bg-amber-500/20",
+      text: "text-amber-600 dark:text-amber-400",
+      border: "border-amber-500/20 dark:border-amber-500/30",
+      label: "Duronto Express",
+    },
+    vandeBharat: {
+      bg: "bg-indigo-500/10 dark:bg-indigo-500/20",
+      text: "text-indigo-600 dark:text-indigo-400",
+      border: "border-indigo-500/20 dark:border-indigo-500/30",
+      label: "Vande Bharat",
+    },
+    superfast: {
+      bg: "bg-teal-500/10 dark:bg-teal-500/20",
+      text: "text-teal-600 dark:text-teal-400",
+      border: "border-teal-500/20 dark:border-teal-500/30",
+      label: "Superfast Express",
+    },
+    express: {
+      bg: "bg-slate-500/10 dark:bg-slate-500/20",
+      text: "text-slate-600 dark:text-slate-400",
+      border: "border-slate-500/20 dark:border-slate-500/30",
+      label: "Mail/Express",
+    },
+    passenger: {
+      bg: "bg-orange-500/10 dark:bg-orange-500/20",
+      text: "text-orange-600 dark:text-orange-400",
+      border: "border-orange-500/20 dark:border-orange-500/30",
+      label: "Passenger",
+    },
+  },
+
+  // Delay states mappings
+  delays: {
+    onTime: {
+      text: "text-green-600 dark:text-green-400",
+      bg: "bg-green-500/10 dark:bg-green-500/20",
+      border: "border-green-500/20",
+      label: "On Time",
+    },
+    delayed: {
+      text: "text-red-600 dark:text-red-400",
+      bg: "bg-red-500/10 dark:bg-red-500/20",
+      border: "border-red-500/20",
+      label: "Delayed",
+    },
+    cancelled: {
+      text: "text-slate-500 dark:text-slate-400",
+      bg: "bg-slate-500/10 dark:bg-slate-500/20",
+      border: "border-slate-500/20",
+      label: "Cancelled",
+    },
+    diverted: {
+      text: "text-purple-600 dark:text-purple-400",
+      bg: "bg-purple-500/10 dark:bg-purple-500/20",
+      border: "border-purple-500/20",
+      label: "Diverted",
+    },
+  },
+
+  // Seat availability states
+  availability: {
+    available: {
+      text: "text-green-600 dark:text-green-400",
+      bg: "bg-green-500/10 dark:bg-green-500/20",
+      border: "border-green-500/20 dark:border-green-500/30",
+    },
+    rac: {
+      text: "text-amber-600 dark:text-amber-400",
+      bg: "bg-amber-500/10 dark:bg-amber-500/20",
+      border: "border-amber-500/20 dark:border-amber-500/30",
+    },
+    waitlist: {
+      text: "text-red-600 dark:text-red-400",
+      bg: "bg-red-500/10 dark:bg-red-500/20",
+      border: "border-red-500/20 dark:border-red-500/30",
+    },
+  },
+
+  // Journey timeline stop status colors
+  timelineStatus: {
+    completed: "bg-primary/20 border-primary text-primary-foreground",
+    current: "bg-background border-primary text-primary ring-4 ring-primary/20",
+    upcoming: "bg-background border-border text-muted-foreground",
+    delayed: "bg-background border-red-500 text-red-500 ring-4 ring-red-500/20",
+    cancelled:
+      "bg-background border-slate-300 dark:border-slate-700 text-muted-foreground line-through",
+    skipped: "bg-muted border-muted-foreground/30 text-muted-foreground",
+  },
+};
