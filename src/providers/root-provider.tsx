@@ -6,6 +6,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { MotionConfig } from "framer-motion";
 
 import { ToastProvider } from "@/components/ui/toast/toast-provider";
+import { ShellProvider } from "@/providers/shell-provider";
 
 // Helper to construct a QueryClient with resilient fetch/retry policies
 function makeQueryClient() {
@@ -57,7 +58,9 @@ export function RootProvider({ children }: RootProviderProps) {
             mass: 0.8,
           }}
         >
-          <ToastProvider>{children}</ToastProvider>
+          <ShellProvider>
+            <ToastProvider>{children}</ToastProvider>
+          </ShellProvider>
         </MotionConfig>
       </NextThemesProvider>
     </QueryClientProvider>

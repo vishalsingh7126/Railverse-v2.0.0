@@ -3,12 +3,12 @@ import { render, screen } from "@testing-library/react";
 import * as React from "react";
 import { axe } from "jest-axe";
 import { AppShell } from "./app-shell";
-import { NavigationProvider } from "@/providers/navigation-provider";
+import { ShellProvider } from "@/providers/shell-provider";
 
 describe("AppShell Component", () => {
   it("should render successfully with custom slots", () => {
     render(
-      <NavigationProvider>
+      <ShellProvider>
         <AppShell
           header={<div>Header Panel</div>}
           sidebar={<div>Sidebar Drawer</div>}
@@ -16,7 +16,7 @@ describe("AppShell Component", () => {
         >
           <div>Main Workspace</div>
         </AppShell>
-      </NavigationProvider>
+      </ShellProvider>
     );
 
     expect(screen.getByText("Header Panel")).toBeInTheDocument();
@@ -27,11 +27,11 @@ describe("AppShell Component", () => {
 
   it("should have no accessibility violations", async () => {
     const { container } = render(
-      <NavigationProvider>
+      <ShellProvider>
         <AppShell>
           <div>Workspace</div>
         </AppShell>
-      </NavigationProvider>
+      </ShellProvider>
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

@@ -2,6 +2,7 @@ import { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { defaultMetadata, defaultViewport } from "@/config/metadata";
 import { RootProvider } from "@/providers/root-provider";
+import { SkipNav } from "@/components/shell/skip-nav";
 import "@/styles/globals.css";
 
 const geistSans = Geist({
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased min-h-screen bg-background text-foreground`}
       >
+        <SkipNav />
         <RootProvider>{children}</RootProvider>
       </body>
     </html>

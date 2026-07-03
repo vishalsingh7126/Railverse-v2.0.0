@@ -1,25 +1,23 @@
-export const routes = {
-  home: "/",
-  pnr: {
-    root: "/pnr",
-    status: (id: string) => `/pnr/${id}`,
+export const ROUTES = {
+  HOME: "/",
+  LOGIN: "/login",
+  DASHBOARD: "/dashboard",
+  PNR: {
+    ROOT: "/pnr",
+    STATUS: (id: string) => `/pnr/${id}`,
   },
-  trains: {
-    root: "/trains",
-    details: (number: string) => `/trains/${number}`,
-    live: (number: string) => `/trains/${number}/live`,
+  TRAINS: {
+    ROOT: "/trains",
+    DETAILS: (number: string) => `/trains/${number}`,
+    LIVE: (number: string) => `/trains/${number}/live`,
   },
-  seatAvailability: {
-    root: "/seat-availability",
-  },
-  fareComparison: {
-    root: "/fare-comparison",
-  },
-  api: {
-    pnr: (id: string) => `/api/pnr/${id}`,
-    trainDetails: (number: string) => `/api/trains/${number}`,
-    liveStatus: (number: string) => `/api/trains/${number}/live`,
-    seatAvailability: "/api/seat-availability",
-    fareComparison: "/api/fare-comparison",
+  SEAT_AVAILABILITY: "/seat-availability",
+  FARE_COMPARISON: "/fare-comparison",
+  API: {
+    PNR: (id: string) => `/api/pnr/${id}`,
+    TRAIN_DETAILS: (number: string) => `/api/trains/${number}`,
+    LIVE_STATUS: (number: string) => `/api/trains/${number}/live`,
+    SEAT_AVAILABILITY: "/api/seat-availability",
+    FARE_COMPARISON: "/api/fare-comparison",
   },
 } as const;

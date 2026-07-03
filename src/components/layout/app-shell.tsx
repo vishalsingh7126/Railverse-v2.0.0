@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { useNavigation } from "@/providers/navigation-provider";
+import { useShell } from "@/providers/shell-provider";
 
 export interface AppShellProps extends React.HTMLAttributes<HTMLDivElement> {
   header?: React.ReactNode;
@@ -14,7 +14,8 @@ export interface AppShellProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const AppShell = React.forwardRef<HTMLDivElement, AppShellProps>(
   ({ className, header, sidebar, rightSidebar, footer, children, ...props }, ref) => {
-    const { sidebarOpen, sidebarCollapsed } = useNavigation();
+    const { state } = useShell();
+    const { sidebarOpen, sidebarCollapsed } = state;
 
     // Determine left sidebar width for responsive layout grid columns
     const leftSidebarWidthClass = React.useMemo(() => {

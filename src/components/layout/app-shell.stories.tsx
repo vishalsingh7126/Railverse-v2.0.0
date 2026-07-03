@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import * as React from "react";
 import { AppShell } from "./app-shell";
-import { NavigationProvider } from "@/providers/navigation-provider";
+import { ShellProvider } from "@/providers/shell-provider";
 
 const meta = {
   title: "Layout/AppShell",
@@ -11,9 +11,9 @@ const meta = {
   },
   decorators: [
     (Story) => (
-      <NavigationProvider>
+      <ShellProvider>
         <Story />
-      </NavigationProvider>
+      </ShellProvider>
     ),
   ],
 } satisfies Meta<typeof AppShell>;
